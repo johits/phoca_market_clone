@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">phoca_market_clone</string>
+
+
+    <!--    mypage-->
+    <string name="mypage">마이페이지</string>
+    <string name="accost">안녕하세요! %s 님</string>
+    <string name="tip">포카 제보</string>
+    <string name="collect">내 콜렉트북</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="buy_it">구매해요</string>
+    <string name="sell_it">판매해요</string>
+    <string name="total">전체</string>
+    <string name="matching">매칭중</string>
+    <string name="trading">거래중</string>
+    <string name="trade_complete">거래완료</string>
+    <string name="receive_sell">입고판매</string>
+    <string name="my_wallet">내 지갑</string>
+    <string name="purchase_details">구매내역</string>
+    <string name="apply_for_sales">입고판매 신청하기</string>
+    <string name="inform_tdn">운송장번호 알려주기</string>
+    <string name="guide">입고판매 가이드</string>
+    <string name="inspection_standard">포토카드 검수기준</string>
+    <string name="most_favorite_group_set">최애 그룹 설정</string>
+    <string name="withdrawal_chip">포카칩 출금</string>
+    <string name="notice">공지사항</string>
+    <string name="questions">자주 묻는 질문</string>
+    <string name="terms_and_conditions">서비스 이용약관</string>
+    <string name="personal_info_policy">개인정보 처리방침</string>
 </resources>
