@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="13dp">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="포카찾기"
+            android:textColor="@color/black"
+            android:textSize="28dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:maxLines="1"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title"
+            app:layout_constraintEnd_toStartOf="@+id/btn_heart"
+            app:layout_constraintStart_toEndOf="@+id/tv_title"
+            app:layout_constraintTop_toTopOf="@+id/tv_title" />
+
+        <Button
+            android:id="@+id/btn_heart"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/ic_herat_blank"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_title" />
+
+        <Spinner
+            android:id="@+id/sp_group"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="그룹 선택"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_search" />
+
+        <Spinner
+            android:id="@+id/sp_member"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:autofillHints="멤버 선택"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/sp_group"
+            app:layout_constraintTop_toBottomOf="@+id/et_search" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sp_group"
+            app:spanCount="2"
+            tools:listitem="@layout/rv_search_item" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
