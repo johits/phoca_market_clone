@@ -388,13 +388,14 @@
                     <LinearLayout
                         android:id="@+id/linear_mypage_receive"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_marginStart="15dp"
                         android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="15dp"
                         android:background="@drawable/background_mypage_radius_buysell"
                         android:orientation="horizontal"
                         android:paddingVertical="10dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/tv_receive_sell"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tv_mypage_receive_sell_title">
@@ -471,6 +472,36 @@
                         </LinearLayout>
 
                     </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tv_receive_sell"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:background="@drawable/background_mypage_receive_sell_radius"
+                        android:gravity="center"
+                        android:paddingVertical="15dp"
+                        android:text="@string/apply_for_sales"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tv_inform_tdn"
+                        app:layout_constraintStart_toStartOf="@id/linear_mypage_receive"
+                        app:layout_constraintTop_toBottomOf="@id/linear_mypage_receive" />
+
+                    <TextView
+                        android:id="@+id/tv_inform_tdn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@drawable/background_mypage_inform_tdn_radius"
+                        android:gravity="center"
+                        android:paddingVertical="15dp"
+                        android:text="@string/inform_tdn"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@id/linear_mypage_receive"
+                        app:layout_constraintStart_toEndOf="@+id/tv_receive_sell"
+                        app:layout_constraintTop_toTopOf="@+id/tv_receive_sell"
+                        app:layout_constraintVertical_bias="0.0" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <LinearLayout
