@@ -3,6 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/joker/StudioProjects/phoca_market_clone/app/src/main/res/drawable/rd10_gray.xml" value="0.297" />
+        <entry key="..\:/Users/joker/StudioProjects/phoca_market_clone/app/src/main/res/drawable/rd10_white.xml" value="0.2325" />
+        <entry key="..\:/Users/joker/StudioProjects/phoca_market_clone/app/src/main/res/drawable/rd5_gray.xml" value="0.2325" />
+        <entry key="..\:/Users/joker/StudioProjects/phoca_market_clone/app/src/main/res/drawable/selector_gray_white.xml" value="0.2325" />
+        <entry key="..\:/Users/joker/StudioProjects/phoca_market_clone/app/src/main/res/drawable/st_top_botttom.xml" value="0.297" />
+        <entry key="..\:/Users/joker/StudioProjects/phoca_market_clone/app/src/main/res/layout/fragment_my_page.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/joker/StudioProjects/phoca_market_clone/app/src/main/res/layout/fragment_search.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/joker/StudioProjects/phoca_market_clone/app/src/main/res/layout/frgment_detail_page.xml" value="0.33" />
         <entry key="..\:/phocamarketclone/phoca_market_clone/app/src/main/res/drawable/selector_heart.xml" value="0.315" />
         <entry key="..\:/phocamarketclone/phoca_market_clone/app/src/main/res/drawable/stroke_gray_round_5.xml" value="0.315" />
         <entry key="..\:/phocamarketclone/phoca_market_clone/app/src/main/res/layout/activity_main.xml" value="0.26856884057971014" />
