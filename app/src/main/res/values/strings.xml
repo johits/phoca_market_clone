@@ -52,5 +52,19 @@
     <string name="report_precautions_9">최초 제보자에게만 포카칩을 보상으로 드리며, 현재 리스트에 없다고 해서 최초 제보자임을 보장하지는 않습니다.</string>
     <string name="report_precautions_10">등록 처리 및 최초 제보자 확인에 대해서는 따로 피드백을 드리지 않습니다.</string>
     <string name="report_precautions_11">현재 지원하지 않는 그룹의 포카 제보는 처리되지 않습니다.</string>
+    <string name="crap">👏</string>
+    <string name="not_found_matching_history">%s 내역이 없어요</string>
+    <string name="going_to_do_something">%s하러 가기</string>
+    <string name="have_cash">보유중인 캐쉬 : %d원</string>
+    <string name="account_info">계좌 정보</string>
+    <string name="reg_first_account_info">계좌 먼저 등록하기 (클릭)</string>
+    <string name="cash_manage_caution1">출금 요청시 요청 1건당 수수료 1,000원이 부과됩니다.</string>
+    <string name="cash_manage_caution2">실명 인증이 완료된 계좌로만 캐쉬 출금이 가능합니다. 만약 실명 인증을 진행하지 않았다면 먼저 인증을 진행해주세요.</string>
+    <string name="cash_manage_caution3">출금 요청 시점에 등록된 계좌로 출금됩니다. 출금 요청 직후 계좌를 변경하셔도 이전 출금 요청 건에는 반영되지 않으니 다시 한 번 확인해주세요.</string>
+    <string name="cash_manage_caution4">캐쉬는 출금 요청시 모두 출금 처리되며 나누어 출금할 수 없습니다.</string>
+    <string name="cash_manage_caution5">오류 발생 또는 부정하게 획득한 캐쉬에 대해서는 지급이 거절 될 수 있으며 지급이 되더라도 반환의 의무가 발생합니다.</string>
+    <string name="cash_manage_caution6">출금하실 계좌번호를 다시 확인해주시고 잘못 기재된 정보로 인해 발생한 손해에 대해서는 포카마켓은 책임을 지지 않습니다.</string>
+    <string name="cash_manage_caution7">캐쉬 출금을 요청 하시면 금융기관을 통해 자동 이체되며, 금융기관의 절차에 따라 최대 30분 정도 소요될 수 있습니다.</string>
+
 
 </resources>
