@@ -48,10 +48,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/selector_my_wallet_tap_background"
+                android:background="@drawable/selector_my_wallet_tab_background"
                 android:gravity="center"
                 android:paddingVertical="5dp"
-                android:textColor="@color/selector_my_wallet_tap_text_color"
+                android:textColor="@color/selector_my_wallet_tab_text_color"
                 tools:text="캐쉬 관리" />
 
             <TextView
@@ -60,10 +60,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/selector_my_wallet_tap_background"
+                android:background="@drawable/selector_my_wallet_tab_background"
                 android:gravity="center"
                 android:paddingVertical="5dp"
-                android:textColor="@color/selector_my_wallet_tap_text_color"
+                android:textColor="@color/selector_my_wallet_tab_text_color"
                 tools:text="내역보기" />
         </LinearLayout>
 
