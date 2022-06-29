@@ -50,10 +50,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:layout_weight="1"
-                android:background="@color/selector_manage_tap_text_color"
+                android:background="@color/selector_manage_tab_text_color"
                 android:gravity="center"
                 android:padding="5dp"
-                android:textColor="@color/selector_manage_tap_text_color"
+                android:textColor="@color/selector_manage_tab_text_color"
                 tools:text="매칭중(0)" />
 
             <TextView
@@ -62,10 +62,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:layout_weight="1"
-                android:background="@color/selector_manage_tap_text_color"
+                android:background="@color/selector_manage_tab_text_color"
                 android:gravity="center"
                 android:padding="5dp"
-                android:textColor="@color/selector_manage_tap_text_color"
+                android:textColor="@color/selector_manage_tab_text_color"
                 tools:text="거래중(0)" />
 
             <TextView
@@ -74,10 +74,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:layout_weight="1"
-                android:background="@color/selector_manage_tap_text_color"
+                android:background="@color/selector_manage_tab_text_color"
                 android:gravity="center"
                 android:padding="5dp"
-                android:textColor="@color/selector_manage_tap_text_color"
+                android:textColor="@color/selector_manage_tab_text_color"
                 tools:text="거래완료(0)" />
         </LinearLayout>
 
