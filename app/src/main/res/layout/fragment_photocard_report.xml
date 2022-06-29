@@ -274,11 +274,11 @@
                     android:layout_height="match_parent"
                     android:layout_marginHorizontal="15dp"
                     android:layout_marginTop="10dp"
-                    android:paddingHorizontal="10dp"
-                    android:paddingVertical="10dp"
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/background_report_card_precautions_radius"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="10dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -288,7 +288,7 @@
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="@string/report_bullet"
                             android:textColor="@color/black"
                             android:textSize="20sp"
@@ -296,8 +296,9 @@
 
                         <TextView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:gravity="center_vertical"
                             android:text="@string/report_precautions_1"
                             android:textColor="@color/black" />
                     </LinearLayout>
@@ -309,7 +310,7 @@
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="@string/report_bullet"
                             android:textColor="@color/black"
                             android:textSize="20sp"
@@ -317,8 +318,9 @@
 
                         <TextView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:gravity="center_vertical"
                             android:text="@string/report_precautions_2"
                             android:textColor="@color/black" />
                     </LinearLayout>
@@ -330,7 +332,7 @@
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="@string/report_bullet"
                             android:textColor="@color/black"
                             android:textSize="20sp"
@@ -338,8 +340,9 @@
 
                         <TextView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:gravity="center_vertical"
                             android:text="@string/report_precautions_3"
                             android:textColor="@color/black" />
 
@@ -352,7 +355,7 @@
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="@string/report_bullet"
                             android:textColor="@color/black"
                             android:textSize="20sp"
@@ -360,8 +363,9 @@
 
                         <TextView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:gravity="center_vertical"
                             android:text="@string/report_precautions_4"
                             android:textColor="@color/black" />
                     </LinearLayout>
@@ -373,7 +377,7 @@
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="@string/report_bullet"
                             android:textColor="@color/black"
                             android:textSize="20sp"
@@ -381,8 +385,9 @@
 
                         <TextView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:gravity="center_vertical"
                             android:text="@string/report_precautions_5"
                             android:textColor="@color/black" />
                     </LinearLayout>
@@ -394,7 +399,7 @@
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="@string/report_bullet"
                             android:textColor="@color/black"
                             android:textSize="20sp"
@@ -402,8 +407,9 @@
 
                         <TextView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:gravity="center_vertical"
                             android:text="@string/report_precautions_6"
                             android:textColor="@color/black" />
                     </LinearLayout>
@@ -415,7 +421,7 @@
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="@string/report_bullet"
                             android:textColor="@color/black"
                             android:textSize="20sp"
@@ -423,8 +429,9 @@
 
                         <TextView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:gravity="center_vertical"
                             android:text="@string/report_precautions_7"
                             android:textColor="@color/black" />
                     </LinearLayout>
@@ -436,7 +443,7 @@
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="@string/report_bullet"
                             android:textColor="@color/black"
                             android:textSize="20sp"
@@ -444,8 +451,9 @@
 
                         <TextView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:gravity="center_vertical"
                             android:text="@string/report_precautions_8"
                             android:textColor="@color/black" />
                     </LinearLayout>
@@ -457,7 +465,7 @@
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="@string/report_bullet"
                             android:textColor="@color/black"
                             android:textSize="20sp"
@@ -465,8 +473,9 @@
 
                         <TextView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:gravity="center_vertical"
                             android:text="@string/report_precautions_9"
                             android:textColor="@color/black" />
                     </LinearLayout>
@@ -478,7 +487,7 @@
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="@string/report_bullet"
                             android:textColor="@color/black"
                             android:textSize="20sp"
@@ -486,8 +495,9 @@
 
                         <TextView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:gravity="center_vertical"
                             android:text="@string/report_precautions_10"
                             android:textColor="@color/black" />
                     </LinearLayout>
@@ -499,7 +509,7 @@
 
                         <TextView
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="@string/report_bullet"
                             android:textColor="@color/black"
                             android:textSize="20sp"
@@ -507,8 +517,9 @@
 
                         <TextView
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
+                            android:gravity="center_vertical"
                             android:text="@string/report_precautions_11"
                             android:textColor="@color/black" />
                     </LinearLayout>
