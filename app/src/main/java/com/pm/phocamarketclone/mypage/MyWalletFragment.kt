@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.pm.phocamarketclone.databinding.FragmentMyPageBinding
+import com.pm.phocamarketclone.databinding.FragmentMyWalletBinding
 
-class MyPageFragment:Fragment(){
+class MyWalletFragment : Fragment() {
 
-    private val binding : FragmentMyPageBinding by lazy { FragmentMyPageBinding.inflate(layoutInflater) }
+    private val binding by lazy { FragmentMyWalletBinding.inflate(layoutInflater) }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -20,20 +20,12 @@ class MyPageFragment:Fragment(){
         super.onCreate(savedInstanceState)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
-
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-
-
         return binding.root
     }
-
 }

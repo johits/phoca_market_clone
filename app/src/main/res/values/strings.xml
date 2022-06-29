@@ -5,7 +5,7 @@
     <!--    mypage-->
     <string name="mypage">마이페이지</string>
     <string name="accost">안녕하세요! %s 님</string>
-    <string name="tip">포카 제보</string>
+    <string name="report_card">포카 제보</string>
     <string name="collect">내 콜렉트북</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="buy_it">구매해요</string>
@@ -13,6 +13,7 @@
     <string name="total">전체</string>
     <string name="matching">매칭중</string>
     <string name="trading">거래중</string>
+    <string name="selling">판매중</string>
     <string name="trade_complete">거래완료</string>
     <string name="receive_sell">입고판매</string>
     <string name="my_wallet">내 지갑</string>
@@ -27,4 +28,29 @@
     <string name="questions">자주 묻는 질문</string>
     <string name="terms_and_conditions">서비스 이용약관</string>
     <string name="personal_info_policy">개인정보 처리방침</string>
+    <string name="report_do_not_have_card">없는 포카 제보하기</string>
+    <string name="report_compensate_script">최초 제보자에게는 포카칩 500개를 드립니다. 😁\n(내가 제보한 포카 : %d개)</string>
+    <string name="reg_reject">등록불가</string>
+    <string name="reg_allow">등록가능</string>
+    <string name="explanation_reject_first">증명사진 및 정식명칭이\n포토카드가 아닌 굿즈</string>
+    <string name="explanation_reject_second">빛반사가 있는 사진</string>
+    <string name="explanation_reject_third">저화질의 사진</string>
+    <string name="report_step_first">Step 1. 포카 이미지 첨부하기</string>
+    <string name="report_step_second">Step 2. 정보 알려주기</string>
+    <string name="report_image_upload">이곳을 눌러 이미지를 등록 또는 변경하세요</string>
+    <string name="report_ask_group">어떤 그룹인가요? 🤔</string>
+    <string name="report_precautions_title">주의사항</string>
+    <string name="report_bullet">\u2022\u0020</string>
+    <string name="report_precautions_1">잘못된 정보는 등록이 거절될 수 있습니다.</string>
+    <string name="report_precautions_2">발매 예정인 포토카드들은 등록이 거절될 수 있습니다.</string>
+    <string name="report_precautions_3">타인의 사진으로 제보할 경우 등록이 거절될 수 있습니다.</string>
+    <string name="report_precautions_4">빛반사 또는 저화질의 이미지 등 식별이 불가능할 경우 등록이 거절될 수 있습니다.</string>
+    <string name="report_precautions_5">아티스트의 얼굴이 포함되지 않은 포토카드, 북마크, 스티커, 엽서, 증명사진 등은 해당되지 않습니다.</string>
+    <string name="report_precautions_6">투명 포토카드 제보시 뒷 배경에 흰색 바탕지를 대고 촬영해주세요.</string>
+    <string name="report_precautions_7">지속적인 허위 제보는 자제해 주세요. 등록 처리가 늦어지는 원인이 됩니다.</string>
+    <string name="report_precautions_8">한 번에 1개의 포토카드만 제보해주세요.</string>
+    <string name="report_precautions_9">최초 제보자에게만 포카칩을 보상으로 드리며, 현재 리스트에 없다고 해서 최초 제보자임을 보장하지는 않습니다.</string>
+    <string name="report_precautions_10">등록 처리 및 최초 제보자 확인에 대해서는 따로 피드백을 드리지 않습니다.</string>
+    <string name="report_precautions_11">현재 지원하지 않는 그룹의 포카 제보는 처리되지 않습니다.</string>
+
 </resources>
