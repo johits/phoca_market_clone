@@ -45,7 +45,7 @@
             app:layout_constraintTop_toBottomOf="@id/tb_manage">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/tv_matching_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
@@ -57,7 +57,7 @@
                 tools:text="매칭중(0)" />
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/tv_trading_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
@@ -69,7 +69,7 @@
                 tools:text="거래중(0)" />
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/tv_trade_complete_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
