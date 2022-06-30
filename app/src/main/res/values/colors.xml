@@ -10,5 +10,7 @@
     <color name="gray">#eeeeee</color>
     <color name="dark_gray">#8e8e8e</color>
     <color name="pink">#ec6b65</color>
+    <color name="light_pink">#f6e9e7</color>
+    <color name="dark_pink">#a44e47</color>
     <color name="indigo">#14104d</color>
 </resources>
