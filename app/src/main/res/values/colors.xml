@@ -11,4 +11,9 @@
     <color name="dark_gray">#8e8e8e</color>
     <color name="pink">#ec6b65</color>
     <color name="indigo">#14104d</color>
+    <color name="light_blue_gay">#64707e</color>
+    <color name="green">#439673</color>
+    <color name="pale_green">#e4f3ee</color>
+    <color name="pale_blue">#e2ecf8</color>
+    <color name="pale_blue_gray">#ebeef3</color>
 </resources>

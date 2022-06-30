@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/tv_phoca_talk_chat_me_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="감사합니다."
+        android:textColor="@color/white"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="6dp"
+        android:background="@drawable/background_phoca_talk_chat_me"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_phoca_talk_chat_me_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        tools:text="2022-06-22, 18:00"
+        app:layout_constraintTop_toBottomOf="@id/tv_phoca_talk_chat_me_txt"
+        app:layout_constraintEnd_toEndOf="@id/tv_phoca_talk_chat_me_txt"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
