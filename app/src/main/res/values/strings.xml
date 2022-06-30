@@ -65,6 +65,6 @@
     <string name="cash_manage_caution5">오류 발생 또는 부정하게 획득한 캐쉬에 대해서는 지급이 거절 될 수 있으며 지급이 되더라도 반환의 의무가 발생합니다.</string>
     <string name="cash_manage_caution6">출금하실 계좌번호를 다시 확인해주시고 잘못 기재된 정보로 인해 발생한 손해에 대해서는 포카마켓은 책임을 지지 않습니다.</string>
     <string name="cash_manage_caution7">캐쉬 출금을 요청 하시면 금융기관을 통해 자동 이체되며, 금융기관의 절차에 따라 최대 30분 정도 소요될 수 있습니다.</string>
-
+    <string name="please_first_account_info">계좌를 먼저 등록해주세요 🥰</string>
 
 </resources>

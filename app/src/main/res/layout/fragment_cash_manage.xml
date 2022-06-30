@@ -280,9 +280,8 @@
                     android:layout_marginTop="25dp"
                     android:layout_marginBottom="40dp"
                     tools:background="@drawable/background_light_blue_gray_radius"
-                    tools:text="계좌를 먼저 등록해주세요 🥰"/>
+                    tools:text="@string/please_first_account_info"/>
             </LinearLayout>
         </ScrollView>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

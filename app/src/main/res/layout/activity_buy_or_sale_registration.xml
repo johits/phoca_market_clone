@@ -82,6 +82,21 @@
         app:layout_constraintTop_toTopOf="@+id/tv_recent_transaction_price_text" />
 
     <TextView
+        android:id="@+id/tv_sales_attention"
+        android:layout_width="0dp"
+        android:layout_height="28dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="주의: 하자있는 포카는 판매가 불가능합니다!!"
+        android:background="@drawable/rd5_light_pink"
+        android:textColor="@color/dark_pink"
+        android:layout_marginVertical="5dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/fl_phoca_frame"
+        app:layout_constraintBottom_toTopOf="@+id/tv_best_purchase_price_text"
+        android:layout_marginHorizontal="20dp"/>
+    <TextView
         android:id="@+id/tv_best_purchase_price_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,7 +104,7 @@
         android:text="현재 등록된 최고 구매가 : "
         android:textColor="@color/dark_gray"
         app:layout_constraintStart_toStartOf="@+id/fl_phoca_frame"
-        app:layout_constraintTop_toBottomOf="@+id/fl_phoca_frame" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_sales_attention" />
 
     <TextView
         android:id="@+id/textView3"
@@ -226,30 +241,30 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:background="@drawable/rd5_white_st_1_pink"
+            android:background="@drawable/selector_check_rd5_pink"
             android:gravity="center"
             android:text="우편"
-            android:textColor="@color/pink"
+            android:textColor="@drawable/selector_text_pink_white"
             android:textSize="15dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="5dp"
-            android:background="@drawable/rd5_white_st_1_pink"
+            android:background="@drawable/selector_check_rd5_pink"
             android:gravity="center"
             android:text="반값택배"
-            android:textColor="@color/pink"
+            android:textColor="@drawable/selector_text_pink_white"
             android:textSize="15dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="5dp"
-            android:background="@drawable/rd5_white_st_1_pink"
+            android:background="@drawable/selector_check_rd5_pink"
             android:gravity="center"
             android:text="준등기"
-            android:textColor="@color/pink"
+            android:textColor="@drawable/selector_text_pink_white"
             android:textSize="15dp" />
     </RadioGroup>
 
@@ -288,30 +303,30 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:background="@drawable/rd5_white_st_1_pink"
+            android:background="@drawable/selector_check_rd5_pink"
             android:gravity="center"
             android:text="15일"
-            android:textColor="@color/pink"
+            android:textColor="@drawable/selector_text_pink_white"
             android:textSize="15dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="5dp"
-            android:background="@drawable/rd5_white_st_1_pink"
+            android:background="@drawable/selector_check_rd5_pink"
             android:gravity="center"
             android:text="30일"
-            android:textColor="@color/pink"
+            android:textColor="@drawable/selector_text_pink_white"
             android:textSize="15dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_marginStart="5dp"
-            android:background="@drawable/rd5_white_st_1_pink"
+            android:background="@drawable/selector_check_rd5_pink"
             android:gravity="center"
             android:text="60일"
-            android:textColor="@color/pink"
+            android:textColor="@drawable/selector_text_pink_white"
             android:textSize="15dp" />
     </RadioGroup>
 
