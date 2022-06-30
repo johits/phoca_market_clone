@@ -244,7 +244,7 @@
             android:background="@drawable/selector_check_rd5_pink"
             android:gravity="center"
             android:text="우편"
-            android:textColor="@drawable/selector_text_pink_white"
+            android:textColor="@color/selector_text_pink_white"
             android:textSize="15dp" />
 
         <Button
@@ -254,7 +254,7 @@
             android:background="@drawable/selector_check_rd5_pink"
             android:gravity="center"
             android:text="반값택배"
-            android:textColor="@drawable/selector_text_pink_white"
+            android:textColor="@color/selector_text_pink_white"
             android:textSize="15dp" />
 
         <Button
@@ -264,7 +264,7 @@
             android:background="@drawable/selector_check_rd5_pink"
             android:gravity="center"
             android:text="준등기"
-            android:textColor="@drawable/selector_text_pink_white"
+            android:textColor="@color/selector_text_pink_white"
             android:textSize="15dp" />
     </RadioGroup>
 
@@ -306,7 +306,7 @@
             android:background="@drawable/selector_check_rd5_pink"
             android:gravity="center"
             android:text="15일"
-            android:textColor="@drawable/selector_text_pink_white"
+            android:textColor="@color/selector_text_pink_white"
             android:textSize="15dp" />
 
         <Button
@@ -316,7 +316,7 @@
             android:background="@drawable/selector_check_rd5_pink"
             android:gravity="center"
             android:text="30일"
-            android:textColor="@drawable/selector_text_pink_white"
+            android:textColor="@color/selector_text_pink_white"
             android:textSize="15dp" />
 
         <Button
@@ -326,7 +326,7 @@
             android:background="@drawable/selector_check_rd5_pink"
             android:gravity="center"
             android:text="60일"
-            android:textColor="@drawable/selector_text_pink_white"
+            android:textColor="@color/selector_text_pink_white"
             android:textSize="15dp" />
     </RadioGroup>
 
