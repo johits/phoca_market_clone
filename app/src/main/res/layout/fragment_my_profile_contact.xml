@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tb_contact_setting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:backgroundTint="@color/white"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/my_contact_setting"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/tv_registered_phone_number"
+            android:layout_marginTop="20dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:paddingHorizontal="5dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="@string/registered_phone_number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tb_contact_setting" />
+
+        <TextView
+            android:id="@+id/tv_contact_use_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            android:textColor="@color/black"
+            android:text="@string/contact_use_notification"
+            app:layout_constraintStart_toEndOf="@id/tv_registered_phone_number"
+            app:layout_constraintBottom_toBottomOf="@id/tv_registered_phone_number"/>
+
+        <TextView
+            android:id="@+id/tv_my_phone_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="010-1234-1234"
+            android:textColor="@color/black"
+            android:layout_marginHorizontal="15dp"
+            android:paddingVertical="15dp"
+            android:paddingHorizontal="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/background_mypage_radius_buysell"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_registered_phone_number" />
+
+        <TextView
+            android:id="@+id/tv_contact_notice"
+            android:layout_width="0dp"
+            android:gravity="end"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:text="@string/contact_setting_notice"
+            android:layout_marginHorizontal="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_my_phone_number" />
+
+        <TextView
+            android:id="@+id/tv_change_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingVertical="15dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/change"
+            android:background="@drawable/rd10_pink"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_contact_notice" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
