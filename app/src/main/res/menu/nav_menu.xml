@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--TODO("메뉴 아이템 추가")-->
+
+    <item android:title="my"
+        android:enabled="true"
+        android:id="@+id/nav_my_page"
+        android:icon="@drawable/ic_baseline_person_24"/>
+</menu>
