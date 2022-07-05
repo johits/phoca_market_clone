@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.pm.phocamarketclone.R
 import com.pm.phocamarketclone.databinding.FragmentPhocaTalkChatBinding
 
 /**
@@ -13,7 +15,7 @@ import com.pm.phocamarketclone.databinding.FragmentPhocaTalkChatBinding
  */
 class PhocaTalkChatFragment : Fragment() {
 
-    val binding by lazy { FragmentPhocaTalkChatBinding.inflate(layoutInflater) }
+    private lateinit var binding: FragmentPhocaTalkChatBinding
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -23,7 +25,17 @@ class PhocaTalkChatFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = DataBindingUtil.inflate(
+            layoutInflater,
+            R.layout.fragment_phoca_talk_chat,
+            container,
+            false
+        )
         return binding.root
     }
 }
