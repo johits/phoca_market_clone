@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <!--TODO("메뉴 아이템 추가")-->
 
-    <item android:title="my"
+    <item
+        android:id="@+id/nav_phoca_find"
         android:enabled="true"
+        android:title="@string/phoca_find" />
+
+    <item
+        android:id="@+id/nav_phoca_talk"
+        android:enabled="true"
+        android:title="@string/phoca_talk" />
+
+    <item
         android:id="@+id/nav_my_page"
-        android:icon="@drawable/ic_baseline_person_24"/>
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="@string/my_page" />
+
 </menu>

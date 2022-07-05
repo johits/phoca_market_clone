@@ -100,4 +100,9 @@
     <string name="consent_phrase_notice">\"회원 탈퇴를 진행하겠습니다.\"를 동일하게 입력해주세요</string>
     <string name="withdrawal_button_text">회원 탈퇴하기 😭</string>
 
+    <!--   바텀 네비 메뉴 -->
+    <string name="phoca_find">포카찾기</string>
+    <string name="phoca_talk">포카톡</string>
+    <string name="my_page">마이페이지</string>
+
 </resources>
