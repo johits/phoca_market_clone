@@ -2,6 +2,7 @@ package com.pm.phocamarketclone
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.pm.phocamarketclone.databinding.ActivityMainBinding
 import com.pm.phocamarketclone.mypage.MyPageFragment
@@ -10,13 +11,13 @@ import com.pm.phocamarketclone.search.SearchFragment
 
 class MainActivity : AppCompatActivity() {
 
-    private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    private lateinit var binding :ActivityMainBinding
     private val searchFragment = SearchFragment()
     private val talkFragment = PhocaTalkFragment()
     private val myPageFragment = MyPageFragment()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
         viewInit()
 
     }

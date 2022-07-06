@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.pm.phocamarketclone.R
 import com.pm.phocamarketclone.databinding.FragmentMyWalletBinding
 
 class MyWalletFragment : Fragment() {
 
-    private val binding by lazy { FragmentMyWalletBinding.inflate(layoutInflater) }
+    private lateinit var binding: FragmentMyWalletBinding
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -25,6 +27,9 @@ class MyWalletFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        binding =
+            DataBindingUtil.inflate(layoutInflater, R.layout.fragment_my_wallet, container, false)
 
         return binding.root
     }

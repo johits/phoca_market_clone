@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import com.pm.phocamarketclone.R
 import com.pm.phocamarketclone.databinding.FragmentManageBinding
 
-class ManageFragment :Fragment() {
+class ManageFragment : Fragment() {
 
-    private val binding by lazy { FragmentManageBinding.inflate(layoutInflater) }
+    private lateinit var binding: FragmentManageBinding
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -25,6 +27,7 @@ class ManageFragment :Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = DataBindingUtil.inflate(layoutInflater, R.layout.fragment_manage, container, false)
 
         return binding.root
     }
