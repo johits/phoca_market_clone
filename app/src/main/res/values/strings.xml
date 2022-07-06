@@ -105,4 +105,10 @@
     <string name="phoca_talk">포카톡</string>
     <string name="my_page">마이페이지</string>
 
+    <!--    포카톡 -->
+    <string name="talk_group_member_format">%1$s %2$s</string>
+    <string name="none_talk_emoji">🥺</string>
+    <string name="none_talk_empty_string">텅 ~</string>
+    <string name="none_talk_recommend">첫 번째 포카 거래를 시작해보세요!</string>
+
 </resources>
