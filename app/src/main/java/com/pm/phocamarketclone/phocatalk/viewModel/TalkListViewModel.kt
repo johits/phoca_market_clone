@@ -31,7 +31,6 @@ class TalkListViewModel : ViewModel() {
                 )
             )
         }
-        Log.e("TAG", list.toString())
         _talkList.postValue(list)
     }
 
