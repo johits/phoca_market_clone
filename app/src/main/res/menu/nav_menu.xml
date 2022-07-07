@@ -9,6 +9,7 @@
     <item
         android:id="@+id/nav_phoca_talk"
         android:enabled="true"
+        android:icon="@drawable/ic_round_chat_bubble_outline_24"
         android:title="@string/phoca_talk" />
 
     <item

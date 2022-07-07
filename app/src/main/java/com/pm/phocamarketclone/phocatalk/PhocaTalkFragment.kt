@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.pm.phocamarketclone.R
 import com.pm.phocamarketclone.databinding.FragmentPhocaTalkBinding
+import com.pm.phocamarketclone.phocatalk.viewModel.TalkListViewModel
 
 /**
  * Created by charlie_moon on 2022-06-30
@@ -33,6 +34,9 @@ class PhocaTalkFragment : Fragment() {
         binding =
             DataBindingUtil.inflate(layoutInflater, R.layout.fragment_phoca_talk, container, false)
 
+        val talkViewModel = TalkListViewModel()
+        binding.lifecycleOwner = this
+        binding.vmTalk = talkViewModel
         return binding.root
     }
 }
