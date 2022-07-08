@@ -17,6 +17,8 @@ class SearchFragment : BindingViewModelFragment<FragmentSearchBinding, SearchFra
             rvSearchList.run {
                 adapter = searchListAdapter
                 itemAnimator = null
+                vm = viewModel
+                lifecycleOwner = this@SearchFragment
             }
         }
     }

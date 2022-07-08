@@ -111,4 +111,7 @@
     <string name="none_talk_empty_string">텅 ~</string>
     <string name="none_talk_recommend">첫 번째 포카 거래를 시작해보세요!</string>
 
+    <!--    포카찾기 -->
+    <string name="wish_card">찜한카드</string>
+
 </resources>
