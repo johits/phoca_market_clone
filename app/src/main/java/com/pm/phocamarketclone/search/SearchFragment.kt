@@ -19,6 +19,7 @@ class SearchFragment : BindingViewModelFragment<FragmentSearchBinding, SearchFra
                 itemAnimator = null
                 vm = viewModel
                 lifecycleOwner = this@SearchFragment
+                fragment = this@SearchFragment
             }
         }
     }
@@ -28,5 +29,9 @@ class SearchFragment : BindingViewModelFragment<FragmentSearchBinding, SearchFra
         viewModel.searchList.observe(this) {
             searchListAdapter.submitList(it)
         }
+    }
+
+    fun statusTop(){
+        binding.rvSearchList.scrollToPosition(0)
     }
 }
