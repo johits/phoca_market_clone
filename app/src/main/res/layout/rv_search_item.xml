@@ -1,76 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="170dp"
-    android:layout_height="300dp"
-    android:padding="5dp"
-    android:layout_margin="7dp"
-    android:background="@drawable/stroke_gray_round_5"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-<ImageView
-    android:id="@+id/iv_phoca"
-    android:layout_width="150dp"
-    android:layout_height="200dp"
-    android:background="@color/black"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent"/>
 
-    <Button
-        android:id="@+id/btn_heart"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_phoca"
-        app:layout_constraintEnd_toEndOf="@+id/iv_phoca"
-        android:layout_margin="10dp"
-        android:background="@drawable/selector_heart"/>
+    <data>
+        <variable
+            name="vm"
+            type="com.pm.phocamarketclone.search.SearchFragmentViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="170dp"
+        android:layout_height="300dp"
+        android:layout_margin="7dp"
+        android:background="@drawable/stroke_gray_round_5"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/iv_phoca"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:background="@color/blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/cb_heart"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_margin="10dp"
+            android:button="@null"
+            android:background="@drawable/selector_heart"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_phoca"
+            app:layout_constraintEnd_toEndOf="@+id/iv_phoca" />
 
 
-    <TextView
-        android:id="@+id/tv_phoca_name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:maxLines="2"
-        android:ellipsize="marquee"
-        android:layout_marginTop="3dp"
-        android:text="DIMENSION : DILEMMA CHARYBDIS Ver."
-        app:layout_constraintStart_toStartOf="@+id/iv_phoca"
-        app:layout_constraintEnd_toEndOf="@+id/iv_phoca"
-        app:layout_constraintTop_toBottomOf="@+id/iv_phoca"/>
+        <TextView
+            android:id="@+id/tv_phoca_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:ellipsize="marquee"
+            android:maxLines="2"
+            android:text="DIMENSION : DILEMMA CHARYBDIS Ver."
+            app:layout_constraintEnd_toEndOf="@+id/iv_phoca"
+            app:layout_constraintStart_toStartOf="@+id/iv_phoca"
+            app:layout_constraintTop_toBottomOf="@+id/iv_phoca" />
 
-    <TextView
-        android:id="@+id/tv_recent_transaction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:text="최근 거래가"
-        android:textSize="13dp"
-        app:layout_constraintStart_toStartOf="@+id/iv_phoca"
-        app:layout_constraintTop_toBottomOf="@+id/tv_phoca_name" />
-    <TextView
-        android:id="@+id/tv_recent_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="6,000원"
-        app:layout_constraintTop_toTopOf="@+id/tv_recent_transaction"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_recent_transaction"
-        app:layout_constraintEnd_toEndOf="@+id/tv_phoca_name"/>
-    <TextView
-        android:id="@+id/tv_actual_transaction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:textSize="13dp"
-        android:text="실제 거래가"
-        app:layout_constraintStart_toStartOf="@+id/iv_phoca"
-        app:layout_constraintTop_toBottomOf="@+id/tv_recent_transaction" />
-    <TextView
-        android:id="@+id/tv_actual_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="10,000원"
-        app:layout_constraintTop_toTopOf="@+id/tv_actual_transaction"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_actual_transaction"
-       app:layout_constraintEnd_toEndOf="@+id/tv_phoca_name" />
+        <TextView
+            android:id="@+id/tv_recent_transaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="최근 거래가"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@+id/iv_phoca"
+            app:layout_constraintTop_toBottomOf="@+id/tv_phoca_name" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_recent_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_recent_transaction"
+            app:layout_constraintEnd_toEndOf="@+id/tv_phoca_name"
+            app:layout_constraintTop_toTopOf="@+id/tv_recent_transaction" />
+
+        <TextView
+            android:id="@+id/tv_actual_transaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="실제 거래가"
+            android:textSize="13dp"
+            app:layout_constraintStart_toStartOf="@+id/iv_phoca"
+            app:layout_constraintTop_toBottomOf="@+id/tv_recent_transaction" />
+
+        <TextView
+            android:id="@+id/tv_actual_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10,000원"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_actual_transaction"
+            app:layout_constraintEnd_toEndOf="@+id/tv_phoca_name"
+            app:layout_constraintTop_toTopOf="@+id/tv_actual_transaction" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
