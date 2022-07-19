@@ -1,25 +1,32 @@
 package com.pm.phocamarketclone.search
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import com.pm.phocamarketclone.data.PhocaApiProvider
 import com.pm.phocamarketclone.search.data.SearchData
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.schedulers.Schedulers
 
 class SearchFragmentViewModel(application: Application) : AndroidViewModel(application) {
     private val _searchList = MutableLiveData<List<SearchData>>()
     val searchList: LiveData<List<SearchData>> = _searchList
 
     val isWish = MutableLiveData(false)
-
+    private val phocaApi = PhocaApiProvider.create()
     init {
-        //TODO: (임시) 테스트 더미데이터 추가 -> 추후에 삭제
-        _searchList.value = listOf(
-            SearchData("", "enhypen", 3000, 4500, true),
-            SearchData("", "enhypen1", 1000, 2000, true),
-            SearchData("", "enhypen2", 1500, 4000, false),
-            SearchData("", "enhypen3", 2000, 3000, false),
-            SearchData("", "enhypen4", 3000, 7000, true)
-        )
+        setResult()
     }
+
+    fun setResult(){
+        phocaApi.get("1")
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                _searchList.value = it.items
+            }) {
+            }
+            }
 }
