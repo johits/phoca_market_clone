@@ -8,12 +8,12 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
-abstract class BindingViewModelFragment<B : ViewDataBinding, VM : AndroidViewModel>(
+abstract class BindingViewModelFragment<B : ViewDataBinding, VM : ViewModel>(
     @LayoutRes private val layoutResId: Int,
-    private val viewModelCls: Class<out AndroidViewModel>,
+    private val viewModelCls: Class<out ViewModel>,
 ) : Fragment() {
     lateinit var binding: B
         private set
