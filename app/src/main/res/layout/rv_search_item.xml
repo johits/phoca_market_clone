@@ -10,7 +10,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="170dp"
-        android:layout_height="300dp"
+        android:layout_height="270dp"
         android:layout_margin="7dp"
         android:background="@drawable/stroke_gray_round_5"
         android:padding="5dp">
@@ -51,7 +51,7 @@
             android:id="@+id/tv_recent_transaction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="13dp"
             android:text="최근 거래가"
             android:textSize="13dp"
             app:layout_constraintStart_toStartOf="@+id/iv_phoca"
@@ -64,25 +64,6 @@
             app:layout_constraintBottom_toBottomOf="@+id/tv_recent_transaction"
             app:layout_constraintEnd_toEndOf="@+id/tv_phoca_name"
             app:layout_constraintTop_toTopOf="@+id/tv_recent_transaction" />
-
-        <TextView
-            android:id="@+id/tv_actual_transaction"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:text="실제 거래가"
-            android:textSize="13dp"
-            app:layout_constraintStart_toStartOf="@+id/iv_phoca"
-            app:layout_constraintTop_toBottomOf="@+id/tv_recent_transaction" />
-
-        <TextView
-            android:id="@+id/tv_actual_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="10,000원"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_actual_transaction"
-            app:layout_constraintEnd_toEndOf="@+id/tv_phoca_name"
-            app:layout_constraintTop_toTopOf="@+id/tv_actual_transaction" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

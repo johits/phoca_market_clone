@@ -14,7 +14,6 @@ class SearchListViewHolder(parent: ViewGroup) :
             ivPhoca.load(context.getString(R.string.image_base_url, item.imageUrl))
             tvPhocaName.text = item.title
             tvRecentPrice.text = String.format("%,d 원", item.recentTransaction)
-            tvActualPrice.text = String.format("%,d 원", item.actualTransaction)
             cbHeart.isChecked = item.heart
         }
     }
