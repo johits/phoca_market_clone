@@ -17,11 +17,14 @@ data class ResultGetSearch(
 
 @Parcelize
 data class SearchData(
-    @SerializedName("path")
+    @SerializedName("imageUrl")
+    val idx: String ="",
+    @SerializedName("imageUrl")
     val imageUrl: String = "",
     @SerializedName("cardName")
     val title: String,
+    @SerializedName("recentPrice")
     val recentTransaction: Int = 0,
-    val actualTransaction: Int = 0,
+    @SerializedName("heart")
     val heart: Boolean = false
 ) : Parcelable
