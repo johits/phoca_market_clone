@@ -7,6 +7,9 @@ import retrofit2.http.Path
 
 
 interface PhocaServiceApi {
-    @GET("rest/photocard/list/{page_num}")
-    fun get(@Path("page_num") page_num: String): Single<ResultGetSearch>
+    @GET("rest/photocard/list/{page_num}/{user_idx}/{search_keyword}")
+    fun get(@Path("page_num") page_num: Int,
+            @Path("user_idx") user_idx: Int = -1,
+            @Path("search_keyword") search_keyword: String
+    ): Single<ResultGetSearch>
 }

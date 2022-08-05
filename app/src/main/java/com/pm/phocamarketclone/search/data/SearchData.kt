@@ -8,7 +8,6 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class ResultGetSearch(
-    @SerializedName("result")
     var result: Boolean = false,
     @SerializedName("data")
     var items: List<SearchData>
@@ -17,7 +16,6 @@ data class ResultGetSearch(
 
 @Parcelize
 data class SearchData(
-    @SerializedName("path")
     val imageUrl: String = "",
     @SerializedName("cardName")
     val title: String,
