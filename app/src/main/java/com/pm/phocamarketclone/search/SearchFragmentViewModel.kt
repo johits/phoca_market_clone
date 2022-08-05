@@ -5,12 +5,13 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.pm.phocamarketclone.data.PhocaApiProvider
 import com.pm.phocamarketclone.search.data.SearchData
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 
-class SearchFragmentViewModel(application: Application) : AndroidViewModel(application) {
+class SearchFragmentViewModel() : ViewModel() {
     private val _searchList = MutableLiveData<List<SearchData>>()
     val searchList: LiveData<List<SearchData>> = _searchList
 

@@ -37,6 +37,8 @@ android {
 }
 
 dependencies {
+    //RecyclerView
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
 
     //RxJava3
     implementation 'io.reactivex.rxjava3:rxjava:3.1.1'
