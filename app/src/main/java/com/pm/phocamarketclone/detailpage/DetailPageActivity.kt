@@ -1,7 +1,9 @@
 package com.pm.phocamarketclone.detailpage
 
+import android.content.Intent
 import com.pm.phocamarketclone.R
 import com.pm.phocamarketclone.base.BaseViewModelActivity
+import com.pm.phocamarketclone.buyorsaleregistration.BuyOrSaleRegistrationActivity
 import com.pm.phocamarketclone.databinding.ActivityDetailPageBinding
 import com.pm.phocamarketclone.detailpage.recyclerview.DetailListAdapter
 import com.pm.phocamarketclone.detailpage.recyclerview.MatchingListAdapter
@@ -27,6 +29,20 @@ class DetailPageActivity :
                 adapter = matchingListAdapter
                 itemAnimator = null
 
+            }
+            btnBack.setOnClickListener{
+                onBackPressed()
+                finish()}
+
+            btnBuy.setOnClickListener {
+                val intent = Intent(this@DetailPageActivity, BuyOrSaleRegistrationActivity::class.java)
+                intent.putExtra("is_buy_or_sale", "buy")
+                startActivity(intent)
+            }
+            btnSale.setOnClickListener {
+                val intent = Intent(this@DetailPageActivity, BuyOrSaleRegistrationActivity::class.java)
+                intent.putExtra("is_buy_or_sale", "sale")
+                startActivity(intent)
             }
         }
     }

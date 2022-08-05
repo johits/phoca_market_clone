@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".detailpage.DetailPageActivity" />
+        <activity android:name=".buyorsaleregistration.BuyOrSaleRegistrationActivity" />
     </application>
 
 </manifest>
