@@ -4,18 +4,25 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.pm.phocamarketclone.detailpage.data.DetailData
+import com.pm.phocamarketclone.detailpage.data.MatchingHistoryData
 
 enum class DetailState {
     BUY, SALE
 }
 
 class DetailPageActivityViewModel : ViewModel() {
+    var isStateBuyOrSale = MutableLiveData<DetailState>()
+
     private val _buyOrSaleList = MutableLiveData<List<DetailData>>()
     val buyOrSaleList: LiveData<List<DetailData>> = _buyOrSaleList
-    var isStateBuyOrSale = MutableLiveData<DetailState>()
+
+    private val _matchingList = MutableLiveData<List<MatchingHistoryData>>()
+    val matchingList: LiveData<List<MatchingHistoryData>> = _matchingList
+
 
     init {
         getBuyOrSaleList(DetailState.BUY)
+        getMatchingList()
         isStateBuyOrSale.value = DetailState.BUY
     }
 
@@ -39,6 +46,17 @@ class DetailPageActivityViewModel : ViewModel() {
             DetailState.SALE -> saleData
         }
     }
+
+    fun getMatchingList() {
+        _matchingList.value = listOf(
+            MatchingHistoryData(matchingPrice = 1111L),
+            MatchingHistoryData(matchingPrice = 2222L),
+            MatchingHistoryData(matchingPrice = 3333L),
+            MatchingHistoryData(matchingPrice = 4444L),
+            MatchingHistoryData(matchingPrice = 5555L)
+        )
+        }
+
 
     fun setOnClickMatchWaitingState(type: DetailState) {
         when (type) {
