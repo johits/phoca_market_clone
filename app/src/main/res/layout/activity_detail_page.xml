@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <import type="com.pm.phocamarketclone.detailpage.DetailState"/>
+        <variable
+            name="vm"
+            type="com.pm.phocamarketclone.detailpage.DetailPageActivityViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,8 +29,8 @@
 
         <ImageView
             android:id="@+id/iv_phoca"
-            android:layout_width="100dp"
-            android:layout_height="150dp"
+            android:layout_width="80dp"
+            android:layout_height="110dp"
             android:layout_margin="20dp"
             android:background="@color/black"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +66,7 @@
             android:text="최근 거래 가격:"
             android:textSize="18dp"
             android:textColor="@color/black"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="@+id/iv_phoca"
             app:layout_constraintStart_toStartOf="@+id/tv_phoca_name" />
 
@@ -83,7 +86,7 @@
             android:id="@+id/tv_matching_waiting_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:text="매칭 대기중인 포카"
             android:textColor="@color/black"
             android:textSize="20dp"
@@ -106,13 +109,14 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_matching_waiting_text">
 
             <RadioButton
-                android:id="@+id/rd_buy"
+                android:id="@+id/rd_state_buy"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_weight="1"
                 android:background="@drawable/selector_gray_white"
                 android:button="@null"
-                android:checked="true"
+                android:checked="@{vm.isStateBuyOrSale == DetailState.BUY}"
+                android:onClick="@{()->vm.setOnClickMatchWaitingState(DetailState.BUY)}"
                 android:paddingLeft="30dp"
                 android:paddingRight="30dp"
                 android:text="구매중"
@@ -120,14 +124,14 @@
                 android:textColor="@color/black" />
 
             <RadioButton
-                android:id="@+id/rd_sale"
+                android:id="@+id/rd_state_sale"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 android:background="@drawable/selector_gray_white"
                 android:button="@null"
-                android:paddingLeft="15dp"
-                android:paddingRight="15dp"
+                android:checked="@{vm.isStateBuyOrSale == DetailState.SALE}"
+                android:onClick="@{()->vm.setOnClickMatchWaitingState(DetailState.SALE)}"
                 android:text="판매중"
                 android:textAlignment="center"
                 android:textColor="@color/black" />
@@ -149,6 +153,8 @@
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:background="@drawable/st_bottom"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_buy_or_sale_info_title"
