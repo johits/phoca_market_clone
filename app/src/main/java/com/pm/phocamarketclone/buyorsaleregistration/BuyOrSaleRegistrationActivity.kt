@@ -9,4 +9,9 @@ class BuyOrSaleRegistrationActivity :
         R.layout.activity_buy_or_sale_registration,
         BuyOrSaleRegistrationActivityViewModel::class.java
     ) {
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(0, 0)
+    }
 }

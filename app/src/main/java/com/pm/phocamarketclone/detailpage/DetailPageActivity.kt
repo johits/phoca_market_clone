@@ -38,11 +38,13 @@ class DetailPageActivity :
                 val intent = Intent(this@DetailPageActivity, BuyOrSaleRegistrationActivity::class.java)
                 intent.putExtra("is_buy_or_sale", "buy")
                 startActivity(intent)
+                overridePendingTransition(0, 0)
             }
             btnSale.setOnClickListener {
                 val intent = Intent(this@DetailPageActivity, BuyOrSaleRegistrationActivity::class.java)
                 intent.putExtra("is_buy_or_sale", "sale")
                 startActivity(intent)
+                overridePendingTransition(0, 0)
             }
         }
     }
@@ -61,5 +63,10 @@ class DetailPageActivity :
         viewModel.matchingList.observe(this){
             matchingListAdapter.submitList(it)
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        overridePendingTransition(0, 0)
     }
 }
