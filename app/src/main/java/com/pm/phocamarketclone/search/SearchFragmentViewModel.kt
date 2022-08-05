@@ -20,8 +20,8 @@ class SearchFragmentViewModel(application: Application) : AndroidViewModel(appli
         setResult()
     }
 
-    fun setResult(){
-        phocaApi.get("1")
+    fun setResult(keyword:String = ""){
+        phocaApi.get(1, search_keyword = keyword)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
