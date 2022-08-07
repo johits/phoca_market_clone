@@ -42,6 +42,7 @@ class SearchFragment : BindingViewModelFragment<FragmentSearchBinding, SearchFra
         override fun onClickItem(item: SearchData) {
             val intent = Intent(context, DetailPageActivity::class.java)
             startActivity(intent)
+            requireActivity().overridePendingTransition(0, 0)
         }
 
     }
