@@ -41,6 +41,7 @@ class SearchFragment : BindingViewModelFragment<FragmentSearchBinding, SearchFra
     private inner class SearchListener : SearchListAdapter.SearchListener {
         override fun onClickItem(item: SearchData) {
             val intent = Intent(context, DetailPageActivity::class.java)
+            intent.putExtra("idx",item.idx)
             startActivity(intent)
         }
 

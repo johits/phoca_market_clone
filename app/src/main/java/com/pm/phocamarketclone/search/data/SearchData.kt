@@ -16,6 +16,7 @@ data class ResultGetSearch(
 
 @Parcelize
 data class SearchData(
+    val idx: Int = -1,
     val imageUrl: String = "",
     @SerializedName("cardName")
     val title: String,
