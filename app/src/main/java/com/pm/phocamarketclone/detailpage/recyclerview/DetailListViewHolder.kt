@@ -17,7 +17,7 @@ class DetailListViewHolder(parent: ViewGroup) :
         val dayFormat = SimpleDateFormat("yyyy/MM/dd", Locale.ROOT)
         binding.apply {
             tvDate.text = dayFormat.format(item.registrationDate)
-            tvPrice.text = item.hopePrice.toString()
+            tvPrice.text = context.getString(R.string.price_unit_format, item.hopePrice)
         }
     }
 }
