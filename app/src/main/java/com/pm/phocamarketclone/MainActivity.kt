@@ -27,7 +27,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
         viewInit()
-        add()
+//        for (i in 1..3){
+//            add(i)
+//        }
     }
 
     private fun viewInit() {
@@ -46,32 +48,23 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().replace(R.id.fl_fragment, fragment).commit()
     }
 
-    fun add(){
-
-val idx = db.collection("photocardlist").get().result.documents.size
-        Log.e("jhs", "add: 사이즈 $idx", )
-        // Create a new user with a first and last name
+    fun add(i:Int){
         val photoCard: MutableMap<String, Any> = HashMap()
-        photoCard["cardName"] = "뉴진스 1집 해린"
-        photoCard["group"] = "뉴진스"
+        photoCard["cardName"] = "TXT Version."
+        photoCard["group"] = "TXT"
         photoCard["heart"] = false
-        photoCard["imageUrl"] = "해린.jpg"
-        photoCard["member"] = "해린"
-        photoCard["recentPrice"] = 7000
+        photoCard["imageUrl"] = "연준$i.jfif"
+        photoCard["member"] = "연준"
+        photoCard["recentPrice"] = 1000
 
-        db.collection("photocardlist").document(idx.toString()).set(photoCard)
-
-
-
-// Add a new document with a generated ID
-//        db.collection("photocardlist")
-//            .add(photoCard)
-//            .addOnSuccessListener(OnSuccessListener<DocumentReference> { documentReference ->
-//                Log.d(
-//                    "jhs",
-//                    "DocumentSnapshot added with ID: " + documentReference.id
-//                )
-//            })
-//            .addOnFailureListener(OnFailureListener { e -> Log.w("jhs", "Error adding document", e) })
+        db.collection("photocardlist")
+            .add(photoCard)
+            .addOnSuccessListener( { documentReference ->
+                Log.d(
+                    "jhs",
+                    "DocumentSnapshot added with ID: " + documentReference.id
+                )
+            })
+            .addOnFailureListener(OnFailureListener { e -> Log.w("jhs", "Error adding document", e) })
     }
 }

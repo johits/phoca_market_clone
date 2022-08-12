@@ -12,7 +12,7 @@ import com.pm.phocamarketclone.search.data.SearchData
 
 class SearchListViewHolder(parent: ViewGroup) :
     BaseViewHolder<SearchData, RvSearchItemBinding>(
-        com.pm.phocamarketclone.R.layout.rv_search_item,
+        R.layout.rv_search_item,
         parent
     ) {
 
@@ -22,7 +22,6 @@ class SearchListViewHolder(parent: ViewGroup) :
 
     override fun bind(item: SearchData) {
         binding.apply {
-//            ivPhoca.load(context.getString(com.pm.phocamarketclone.R.string.image_base_url, item.imageUrl))
             tvPhocaName.text = item.title
             tvRecentPrice.text = String.format("%,d 원", item.recentTransaction)
             tvActualPrice.text = String.format("%,d 원", item.actualTransaction)
@@ -38,14 +37,6 @@ class SearchListViewHolder(parent: ViewGroup) :
                     ivPhoca.load(uri.toString())
                 }.addOnFailureListener {
                 }
-
-//            val a = FirebaseStorage.getInstance().reference.child("/searchPhotoCard/new.jfif")
-////            ivPhoca.load(context.getString(com.pm.phocamarketclone.R.string.image_base_url, a))
-//            val file = File.createTempFile("new", "jpg")
-//            a.getFile(file).addOnSuccessListener {
-//                val bitmap = BitmapFactory.decodeFile(file.absolutePath)
-//                ivPhoca.setImageBitmap(bitmap)
-//            }.addOnFailureListener { }
         }
     }
 }

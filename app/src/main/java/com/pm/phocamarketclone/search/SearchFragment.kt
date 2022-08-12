@@ -1,6 +1,7 @@
 package com.pm.phocamarketclone.search
 
 import android.content.Intent
+import android.view.inputmethod.EditorInfo
 import com.pm.phocamarketclone.R
 import com.pm.phocamarketclone.base.BindingViewModelFragment
 import com.pm.phocamarketclone.databinding.FragmentSearchBinding
@@ -23,6 +24,15 @@ class SearchFragment : BindingViewModelFragment<FragmentSearchBinding, SearchFra
                 vm = viewModel
                 lifecycleOwner = this@SearchFragment
                 fragment = this@SearchFragment
+
+                etSearch.setOnEditorActionListener { v, actionId, event ->
+                    if (actionId === EditorInfo.IME_ACTION_SEARCH) {
+                        viewModel.search(etSearch.text.toString())
+                        return@setOnEditorActionListener true
+                    }
+                    false
+                }
+
             }
         }
     }
@@ -41,7 +51,7 @@ class SearchFragment : BindingViewModelFragment<FragmentSearchBinding, SearchFra
     private inner class SearchListener : SearchListAdapter.SearchListener {
         override fun onClickItem(item: SearchData) {
             val intent = Intent(context, DetailPageActivity::class.java)
-            intent.putExtra("idx",item.idx)
+            intent.putExtra("uniqueKey", item.uniqueKey)
             startActivity(intent)
         }
 
