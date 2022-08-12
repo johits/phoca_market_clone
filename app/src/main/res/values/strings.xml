@@ -2,7 +2,8 @@
     <string name="app_name">phoca_market_clone</string>
 
     <!--BASE URL-->
-    <string name="image_base_url">http://moon3482.asuscomm.com%s</string>
+<!--    <string name="image_base_url">http://moon3482.asuscomm.com%s</string>-->
+    <string name="image_base_url">/searchPhotoCard/%s</string>
 
     <!--    마이페이지 -->
     <string name="mypage">마이페이지</string>

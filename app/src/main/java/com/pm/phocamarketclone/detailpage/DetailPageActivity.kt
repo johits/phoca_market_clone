@@ -1,6 +1,10 @@
 package com.pm.phocamarketclone.detailpage
 
 import android.content.Intent
+import android.util.Log
+import coil.load
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 import com.pm.phocamarketclone.R
 import com.pm.phocamarketclone.base.BaseViewModelActivity
 import com.pm.phocamarketclone.buyorsaleregistration.BuyOrSaleRegistrationActivity
@@ -15,7 +19,9 @@ class DetailPageActivity :
     ) {
     private val detailListAdapter = DetailListAdapter()
     private val matchingListAdapter = MatchingListAdapter()
-
+    private val storage by lazy {
+        Firebase.storage
+    }
     override fun onInitBinding() {
         super.onInitBinding()
         binding.apply {
@@ -62,6 +68,20 @@ class DetailPageActivity :
 
         viewModel.matchingList.observe(this){
             matchingListAdapter.submitList(it)
+        }
+
+        viewModel.photoCardInfo.observe(this){
+            storage.reference.child(
+                this@DetailPageActivity.getString(
+                    R.string.image_base_url,
+                    viewModel.photoCardInfo.value?.imageUrl
+                )
+            ).downloadUrl
+                .addOnSuccessListener { uri ->
+                    Log.d("jhs", "onInitBinding: $uri")
+                    binding.ivPhoca.load(uri.toString())
+                }.addOnFailureListener {
+                }
         }
     }
 
