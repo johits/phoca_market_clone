@@ -116,5 +116,5 @@
 
     <!--    포카찾기 -->
     <string name="wish_card">찜한카드</string>
-
+    <string name="price_unit_format">%,d 원</string>
 </resources>

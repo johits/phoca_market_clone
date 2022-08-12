@@ -18,26 +18,27 @@
 
         <Button
             android:id="@+id/btn_back"
-            android:layout_width="42dp"
-            android:layout_height="42dp"
-            android:scaleX="0.7"
-            android:scaleY="0.7"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
             android:layout_marginVertical="5dp"
             android:background="@drawable/ic_back"
+            android:scaleX="0.3"
+            android:scaleY="0.3"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="상세 페이지"
+            android:text="자세히"
             android:textColor="@color/black"
-            android:textSize="20dp"
+            android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="@+id/btn_back"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/btn_back" />
+
         <FrameLayout
             android:id="@+id/frameLayout"
             android:layout_width="0dp"
@@ -54,8 +55,10 @@
             android:id="@+id/iv_phoca"
             android:layout_width="80dp"
             android:layout_height="110dp"
-            android:layout_margin="10dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
             android:background="@color/black"
+            android:scaleType="centerCrop"
             app:layout_constraintStart_toStartOf="@+id/frameLayout"
             app:layout_constraintTop_toTopOf="@+id/frameLayout" />
 
@@ -63,12 +66,11 @@
             android:id="@+id/tv_phoca_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="30dp"
             android:layout_marginTop="15dp"
             android:maxLines="3"
             android:text="@{vm.photoCardInfo.cardName}"
-            android:textColor="@color/black"
-            android:textSize="18dp"
+            android:textSize="15dp"
             app:layout_constraintStart_toEndOf="@+id/iv_phoca"
             app:layout_constraintTop_toTopOf="@+id/iv_phoca" />
 
@@ -77,8 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ENHYPEN JAKE"
-            android:textColor="@color/black"
-            android:textSize="18dp"
+            android:textSize="15dp"
             app:layout_constraintStart_toStartOf="@+id/tv_phoca_name"
             app:layout_constraintTop_toBottomOf="@+id/tv_phoca_name" />
 
@@ -88,8 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:text="최근 거래 가격:"
-            android:textColor="@color/black"
-            android:textSize="18dp"
+            android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="@+id/iv_phoca"
             app:layout_constraintStart_toStartOf="@+id/tv_phoca_name" />
 
@@ -98,12 +98,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="@{String.valueOf(vm.photoCardInfo.recentPrice)}"
-            android:textColor="@color/black"
-            android:textSize="18dp"
+            android:text="@{@string/price_unit_format(vm.photoCardInfo.recentPrice)}"
+            android:textSize="15dp"
             app:layout_constraintBottom_toBottomOf="@+id/tv_latest_price_title"
             app:layout_constraintStart_toEndOf="@+id/tv_latest_price_title"
             app:layout_constraintTop_toTopOf="@+id/tv_latest_price_title" />
+
 
         <ScrollView
             android:layout_width="match_parent"
@@ -115,9 +115,9 @@
             app:layout_constraintTop_toBottomOf="@+id/frameLayout">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:paddingHorizontal="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:paddingHorizontal="10dp">
 
                 <TextView
                     android:id="@+id/tv_matching_waiting_text"
@@ -130,7 +130,7 @@
                     android:textSize="20dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <RadioGroup
                     android:id="@+id/rg_buy_or_sale"
@@ -247,11 +247,10 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
 
-
         <Button
             android:id="@+id/btn_buy"
             android:layout_width="0dp"
-            android:layout_height="55dp"
+            android:layout_height="45dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="5dp"
             android:layout_marginBottom="10dp"
@@ -267,7 +266,7 @@
         <Button
             android:id="@+id/btn_sale"
             android:layout_width="0dp"
-            android:layout_height="55dp"
+            android:layout_height="0dp"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/selector_press_indigo"

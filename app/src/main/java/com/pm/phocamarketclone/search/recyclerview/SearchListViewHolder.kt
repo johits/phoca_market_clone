@@ -24,7 +24,6 @@ class SearchListViewHolder(parent: ViewGroup) :
         binding.apply {
             tvPhocaName.text = item.title
             tvRecentPrice.text = String.format("%,d 원", item.recentTransaction)
-            tvActualPrice.text = String.format("%,d 원", item.actualTransaction)
             cbHeart.isChecked = item.heart
 
             storage.reference.child(

@@ -17,7 +17,7 @@ class MatchingListViewHolder(parent: ViewGroup) :
         val dayFormat = SimpleDateFormat("yyyy/MM/dd", Locale.ROOT)
         binding.apply {
             tvDate.text = dayFormat.format(item.matchingDate)
-            tvPrice.text = item.matchingPrice.toString()
+            tvPrice.text = context.getString(R.string.price_unit_format, item.matchingPrice)
         }
     }
 }
