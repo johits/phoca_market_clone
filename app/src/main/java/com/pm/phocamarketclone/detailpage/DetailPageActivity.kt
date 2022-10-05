@@ -43,12 +43,14 @@ class DetailPageActivity :
             btnBuy.setOnClickListener {
                 val intent = Intent(this@DetailPageActivity, BuyOrSaleRegistrationActivity::class.java)
                 intent.putExtra("is_buy_or_sale", "buy")
+                intent.putExtra("uniqueKey", viewModel.uniqueKey )
                 startActivity(intent)
                 overridePendingTransition(0, 0)
             }
             btnSale.setOnClickListener {
                 val intent = Intent(this@DetailPageActivity, BuyOrSaleRegistrationActivity::class.java)
                 intent.putExtra("is_buy_or_sale", "sale")
+                intent.putExtra("uniqueKey", viewModel.uniqueKey )
                 startActivity(intent)
                 overridePendingTransition(0, 0)
             }

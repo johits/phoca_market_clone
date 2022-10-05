@@ -1,7 +1,10 @@
 package com.pm.phocamarketclone.buyorsaleregistration
 
-import android.util.Log
 import android.view.View
+import androidx.core.widget.doOnTextChanged
+import coil.load
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 import com.pm.phocamarketclone.R
 import com.pm.phocamarketclone.base.BaseViewModelActivity
 import com.pm.phocamarketclone.databinding.ActivityBuyOrSaleRegistrationBinding
@@ -11,6 +14,10 @@ class BuyOrSaleRegistrationActivity :
         R.layout.activity_buy_or_sale_registration,
         BuyOrSaleRegistrationActivityViewModel::class.java
     ), View.OnClickListener {
+
+    private val storage by lazy {
+        Firebase.storage
+    }
 
     override fun onInitBinding() {
         super.onInitBinding()
@@ -26,6 +33,27 @@ class BuyOrSaleRegistrationActivity :
 
     }
 
+    override fun observeChanges() {
+        super.observeChanges()
+        viewModel.currentPrice.observe(this) {
+            binding.etPrice.doOnTextChanged { text, start, before, count ->
+                viewModel.setCurrentPrice(text.toString().toLong())
+            }
+        }
+        viewModel.photoCardInfo.observe(this) {
+            storage.reference.child(
+                this@BuyOrSaleRegistrationActivity.getString(
+                    R.string.image_base_url,
+                    viewModel.photoCardInfo.value?.imageUrl
+                )
+            ).downloadUrl
+                .addOnSuccessListener { uri ->
+                    binding.ivPhoca.load(uri.toString())
+                }.addOnFailureListener {
+                }
+        }
+    }
+
     override fun onBackPressed() {
         super.onBackPressed()
         overridePendingTransition(0, 0)
@@ -33,17 +61,15 @@ class BuyOrSaleRegistrationActivity :
 
     override fun onClick(v: View) {
         binding.apply {
-            val currentPrice = etPrice.text.toString().toLong()
-            Log.d("jhs", "현재금액 $currentPrice")
             when (v) {
                 btnBack -> {
                     onBackPressed()
                     finish()
                 }
-                btn10000 -> viewModel.setCurrentPrice(10000L)
-                btn5000 -> viewModel.setCurrentPrice(5000L)
-                btn1000 -> viewModel.setCurrentPrice(1000L)
-                btn500 -> viewModel.setCurrentPrice(500L)
+                btn10000 -> viewModel.setAddAmount(10000L)
+                btn5000 -> viewModel.setAddAmount(5000L)
+                btn1000 -> viewModel.setAddAmount(1000L)
+                btn500 -> viewModel.setAddAmount(500L)
             }
         }
     }

@@ -10,13 +10,14 @@ import com.pm.phocamarketclone.detailpage.data.DetailData
 import com.pm.phocamarketclone.detailpage.data.MatchingHistoryData
 import com.pm.phocamarketclone.detailpage.data.PhotoCardInfo
 
-enum class DetailState {
-    BUY, SALE
+enum class DetailState(value:String) {
+    BUY("buy"), SALE("sale")
 }
 
 class DetailPageActivityViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel() {
 
-    private var uniqueKey: String = savedStateHandle.get<String>("uniqueKey") ?: ""
+    var uniqueKey: String = savedStateHandle.get<String>("uniqueKey") ?: ""
+
     var isStateBuyOrSale = MutableLiveData<DetailState>()
     val photoCardInfo = MutableLiveData<PhotoCardInfo>()
 
