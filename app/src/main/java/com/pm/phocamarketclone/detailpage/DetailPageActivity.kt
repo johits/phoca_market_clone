@@ -1,10 +1,8 @@
 package com.pm.phocamarketclone.detailpage
 
 import android.content.Intent
-import android.util.Log
 import coil.load
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.ktx.storage
+import com.example.data.source.ImageSourceImpl
 import com.pm.phocamarketclone.R
 import com.pm.phocamarketclone.base.BaseViewModelActivity
 import com.pm.phocamarketclone.buyorsaleregistration.BuyOrSaleRegistrationActivity
@@ -19,9 +17,8 @@ class DetailPageActivity :
     ) {
     private val detailListAdapter = DetailListAdapter()
     private val matchingListAdapter = MatchingListAdapter()
-    private val storage by lazy {
-        Firebase.storage
-    }
+    private val imageSourceImpl = ImageSourceImpl(this)
+
     override fun onInitBinding() {
         super.onInitBinding()
         binding.apply {
@@ -36,21 +33,24 @@ class DetailPageActivity :
                 itemAnimator = null
 
             }
-            btnBack.setOnClickListener{
+            btnBack.setOnClickListener {
                 onBackPressed()
-                finish()}
+                finish()
+            }
 
             btnBuy.setOnClickListener {
-                val intent = Intent(this@DetailPageActivity, BuyOrSaleRegistrationActivity::class.java)
+                val intent =
+                    Intent(this@DetailPageActivity, BuyOrSaleRegistrationActivity::class.java)
                 intent.putExtra("is_buy_or_sale", "buy")
-                intent.putExtra("uniqueKey", viewModel.uniqueKey )
+                intent.putExtra("uniqueKey", viewModel.uniqueKey)
                 startActivity(intent)
                 overridePendingTransition(0, 0)
             }
             btnSale.setOnClickListener {
-                val intent = Intent(this@DetailPageActivity, BuyOrSaleRegistrationActivity::class.java)
+                val intent =
+                    Intent(this@DetailPageActivity, BuyOrSaleRegistrationActivity::class.java)
                 intent.putExtra("is_buy_or_sale", "sale")
-                intent.putExtra("uniqueKey", viewModel.uniqueKey )
+                intent.putExtra("uniqueKey", viewModel.uniqueKey)
                 startActivity(intent)
                 overridePendingTransition(0, 0)
             }
@@ -60,30 +60,22 @@ class DetailPageActivity :
     override fun observeChanges() {
         super.observeChanges()
 
-        viewModel.isStateBuyOrSale.observe(this){
+        viewModel.isStateBuyOrSale.observe(this) {
             viewModel.getBuyOrSaleList(it)
         }
 
-        viewModel.buyOrSaleList.observe(this){
+        viewModel.buyOrSaleList.observe(this) {
             detailListAdapter.submitList(it)
         }
 
-        viewModel.matchingList.observe(this){
+        viewModel.matchingList.observe(this) {
             matchingListAdapter.submitList(it)
         }
 
-        viewModel.photoCardInfo.observe(this){
-            storage.reference.child(
-                this@DetailPageActivity.getString(
-                    R.string.image_base_url,
-                    viewModel.photoCardInfo.value?.imageUrl
-                )
-            ).downloadUrl
-                .addOnSuccessListener { uri ->
-                    Log.d("jhs", "onInitBinding: $uri")
-                    binding.ivPhoca.load(uri.toString())
-                }.addOnFailureListener {
-                }
+        viewModel.photoCardInfo.observe(this) {
+            imageSourceImpl.getImageUrl(viewModel.photoCardInfo.value!!.imageUrl) {
+                binding.ivPhoca.load(it)
+            }
         }
     }
 

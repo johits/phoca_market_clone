@@ -4,7 +4,7 @@ import android.os.Parcelable
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 import timber.log.Timber
 
 //검색 결과 리스트
@@ -27,17 +27,18 @@ data class SearchData(
     val actualTransaction: Int = 0,
     val heart: Boolean = false
 ) : Parcelable {
-    private val storage by lazy {
-        Firebase.storage
-    }
-    val url
-        get() =
-            storage.reference.child(
-                "/searchPhotoCard/$imageUrl"
-            ).downloadUrl
-                .addOnSuccessListener { uri ->
-                    Timber.e("jhs 이미지 유알엘:$imageUrl")
-                    uri.toString()
-                }.addOnFailureListener {
-                }
+
+//    private val storage by lazy {
+//        Firebase.storage
+//    }
+//    val url
+//        get() =
+//            storage.reference.child(
+//                "/searchPhotoCard/$imageUrl"
+//            ).downloadUrl
+//                .addOnSuccessListener { uri ->
+//                    Timber.e("jhs 이미지 유알엘:$imageUrl")
+//                    uri.toString()
+//                }.addOnFailureListener {
+//                }
 }

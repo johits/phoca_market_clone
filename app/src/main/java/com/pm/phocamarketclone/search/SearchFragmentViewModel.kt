@@ -3,65 +3,27 @@ package com.pm.phocamarketclone.search
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.google.firebase.firestore.FirebaseFirestore
-import com.pm.phocamarketclone.search.data.SearchData
+import com.example.data.model.PhotoCardInfoModel
+import com.example.data.source.RemoteDataSourceImpl
+import timber.log.Timber
 
 
 class SearchFragmentViewModel() : ViewModel() {
-    private val _searchList = MutableLiveData<List<SearchData>>()
-    val searchList: LiveData<List<SearchData>> = _searchList
+    private val _searchList = MutableLiveData<List<PhotoCardInfoModel>>()
+    val searchList: LiveData<List<PhotoCardInfoModel>> = _searchList
     val isWish = MutableLiveData(false)
-    private val db = FirebaseFirestore.getInstance()
-    private val photoCardRef = db.collection("photocardlist")
+    private val remoteDataSourceImpl = RemoteDataSourceImpl()
 
     init {
-        readSearchData()
-    }
-
-
-    fun readSearchData() {
-        val list = ArrayList<SearchData>()
-        photoCardRef
-            .get()
-            .addOnSuccessListener { result ->
-                for (document in result) {
-                    list.add(
-                        SearchData(
-                            uniqueKey = document.id,
-                            imageUrl = document.data["imageUrl"].toString(),
-                            title = document.data["cardName"].toString(),
-                            recentTransaction = document.data["recentPrice"].toString().toInt(),
-                            heart = document.data["heart"].toString().toBoolean()
-                        )
-                    )
-                }
-                _searchList.value = list
-            }
-            .addOnFailureListener { exception ->
-            }
+        remoteDataSourceImpl.getPhotoCardInfoData {
+            _searchList.value = it
+        }
     }
 
     fun search(keyword: String) {
-        val list = ArrayList<SearchData>()
-        photoCardRef
-            .whereEqualTo("member", keyword)
-            .get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-                    list.add(
-                        SearchData(
-                            uniqueKey = document.id,
-                            imageUrl = document.data["imageUrl"].toString(),
-                            title = document.data["cardName"].toString(),
-                            recentTransaction = document.data["recentPrice"].toString().toInt(),
-                            heart = document.data["heart"].toString().toBoolean()
-                        )
-                    )
-                }
-                _searchList.value = list
-            }
-            .addOnFailureListener { exception ->
-            }
-
+        remoteDataSourceImpl.searchPhotoCardInfoData(keyword) {
+            _searchList.value = it
+        }
     }
+
 }

@@ -1,16 +1,15 @@
 package com.pm.phocamarketclone.detailpage
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.google.firebase.firestore.FirebaseFirestore
+import com.example.data.model.PhotoCardInfoModel
+import com.example.data.source.RemoteDataSourceImpl
 import com.pm.phocamarketclone.detailpage.data.DetailData
 import com.pm.phocamarketclone.detailpage.data.MatchingHistoryData
-import com.pm.phocamarketclone.detailpage.data.PhotoCardInfo
 
-enum class DetailState(value:String) {
+enum class DetailState(value: String) {
     BUY("buy"), SALE("sale")
 }
 
@@ -19,14 +18,14 @@ class DetailPageActivityViewModel(private val savedStateHandle: SavedStateHandle
     var uniqueKey: String = savedStateHandle.get<String>("uniqueKey") ?: ""
 
     var isStateBuyOrSale = MutableLiveData<DetailState>()
-    val photoCardInfo = MutableLiveData<PhotoCardInfo>()
+    val photoCardInfo = MutableLiveData<PhotoCardInfoModel>()
 
     private val _buyOrSaleList = MutableLiveData<List<DetailData>>()
     val buyOrSaleList: LiveData<List<DetailData>> = _buyOrSaleList
 
     private val _matchingList = MutableLiveData<List<MatchingHistoryData>>()
     val matchingList: LiveData<List<MatchingHistoryData>> = _matchingList
-    private val db = FirebaseFirestore.getInstance()
+    private val remoteDataSourceImpl = RemoteDataSourceImpl()
 
     init {
         getPhotoCardInfo()
@@ -37,23 +36,9 @@ class DetailPageActivityViewModel(private val savedStateHandle: SavedStateHandle
 
 
     private fun getPhotoCardInfo() {
-        val docRef = db.collection("photocardlist").document(uniqueKey)
-        docRef.get()
-            .addOnSuccessListener { document ->
-                if (document != null) {
-                    photoCardInfo.value = PhotoCardInfo(
-                        cardName = document.data!!["cardName"].toString(),
-                        imageUrl = document.data!!["imageUrl"].toString(),
-                        group = document.data!!["group"].toString(),
-                        member = document.data!!["member"].toString(),
-                        recentPrice = document.data!!["recentPrice"].toString().toLong()
-                    )
-
-                } else {
-                }
-            }
-            .addOnFailureListener { exception ->
-            }
+        remoteDataSourceImpl.getPhotoCardItemInfoData(uniqueKey) {
+            photoCardInfo.value = it
+        }
     }
 
     fun getBuyOrSaleList(type: DetailState) {
@@ -85,7 +70,7 @@ class DetailPageActivityViewModel(private val savedStateHandle: SavedStateHandle
             MatchingHistoryData(matchingPrice = 4444L),
             MatchingHistoryData(matchingPrice = 5555L)
         )
-        }
+    }
 
 
     fun setOnClickMatchWaitingState(type: DetailState) {

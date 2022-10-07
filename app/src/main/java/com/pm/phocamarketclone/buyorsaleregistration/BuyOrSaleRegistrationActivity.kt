@@ -3,8 +3,7 @@ package com.pm.phocamarketclone.buyorsaleregistration
 import android.view.View
 import androidx.core.widget.doOnTextChanged
 import coil.load
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.ktx.storage
+import com.example.data.source.ImageSourceImpl
 import com.pm.phocamarketclone.R
 import com.pm.phocamarketclone.base.BaseViewModelActivity
 import com.pm.phocamarketclone.databinding.ActivityBuyOrSaleRegistrationBinding
@@ -15,9 +14,7 @@ class BuyOrSaleRegistrationActivity :
         BuyOrSaleRegistrationActivityViewModel::class.java
     ), View.OnClickListener {
 
-    private val storage by lazy {
-        Firebase.storage
-    }
+    private val imageSourceImpl = ImageSourceImpl(this)
 
     override fun onInitBinding() {
         super.onInitBinding()
@@ -41,16 +38,9 @@ class BuyOrSaleRegistrationActivity :
             }
         }
         viewModel.photoCardInfo.observe(this) {
-            storage.reference.child(
-                this@BuyOrSaleRegistrationActivity.getString(
-                    R.string.image_base_url,
-                    viewModel.photoCardInfo.value?.imageUrl
-                )
-            ).downloadUrl
-                .addOnSuccessListener { uri ->
-                    binding.ivPhoca.load(uri.toString())
-                }.addOnFailureListener {
-                }
+            imageSourceImpl.getImageUrl(viewModel.photoCardInfo.value!!.imageUrl) {
+                binding.ivPhoca.load(it)
+            }
         }
     }
 
