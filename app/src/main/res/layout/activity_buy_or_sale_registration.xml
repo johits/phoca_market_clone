@@ -4,23 +4,52 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <variable
+            name="vm"
+            type="com.pm.phocamarketclone.buyorsaleregistration.BuyOrSaleRegistrationActivityViewModel" />
 
+        <variable
+            name="detailState"
+            type="com.pm.phocamarketclone.detailpage.DetailState" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/ic_back"
+            android:scaleX="0.3"
+            android:scaleY="0.3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="구매 등록하기"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btn_back" />
+
         <FrameLayout
             android:id="@+id/fl_phoca_frame"
             android:layout_width="match_parent"
             android:layout_height="120dp"
             android:layout_marginHorizontal="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/rd10_gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/btn_back"/>
 
         <ImageView
             android:id="@+id/iv_phoca"
@@ -28,6 +57,7 @@
             android:layout_height="100dp"
             android:layout_marginStart="10dp"
             android:background="@color/black"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="@+id/fl_phoca_frame"
             app:layout_constraintStart_toStartOf="@+id/fl_phoca_frame"
             app:layout_constraintTop_toTopOf="@+id/fl_phoca_frame" />
@@ -37,7 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:text="포카 이름"
+            android:text="@{vm.photoCardInfo.cardName}"
             android:textColor="@color/black"
             android:textSize="15dp"
             app:layout_constraintStart_toEndOf="@+id/iv_phoca"
@@ -48,7 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="멤버 이름"
+            android:text="@{vm.photoCardInfo.member}"
             android:textColor="@color/black"
             android:textSize="15dp"
             app:layout_constraintStart_toStartOf="@+id/tv_phoca_name"
@@ -80,7 +110,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="26,000원"
+            android:text="@{String.valueOf(vm.photoCardInfo.recentPrice)}"
             android:textColor="@color/black"
             android:textSize="18dp"
             android:textStyle="bold"
@@ -148,7 +178,7 @@
             android:id="@+id/tv_buy_price_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             android:text="구매 가격 (운송비 미포함)"
             android:textColor="@color/black"
             android:textSize="16dp"
@@ -157,14 +187,16 @@
             app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
         <EditText
-            android:id="@+id/et_buy_price"
+            android:id="@+id/et_price"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="40dp"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/rd10_white_st_2_gray"
             android:gravity="right|center_vertical"
-            android:hint="0원"
+            android:text="@{String.valueOf(vm.currentPrice)}"
+            android:inputType="number"
+            android:maxLength="8"
             android:paddingEnd="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -176,10 +208,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/et_buy_price"
-            app:layout_constraintTop_toBottomOf="@+id/et_buy_price">
+            app:layout_constraintEnd_toEndOf="@+id/et_price"
+            app:layout_constraintTop_toBottomOf="@+id/et_price">
 
             <Button
+                android:id="@+id/btn_10000"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
                 android:background="@drawable/selector_p_rd5_white_pink"
@@ -189,6 +222,7 @@
                 android:textSize="13dp" />
 
             <Button
+                android:id="@+id/btn_5000"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="5dp"
@@ -199,6 +233,7 @@
                 android:textSize="13dp" />
 
             <Button
+                android:id="@+id/btn_1000"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="5dp"
@@ -209,6 +244,7 @@
                 android:textSize="13dp" />
 
             <Button
+                android:id="@+id/btn_500"
                 android:layout_width="80dp"
                 android:layout_height="30dp"
                 android:layout_marginStart="5dp"
@@ -226,7 +262,7 @@
             android:layout_marginTop="5dp"
             android:text="500원 단위로 입력해주세요!"
             android:textColor="@color/dark_gray"
-            app:layout_constraintEnd_toEndOf="@+id/et_buy_price"
+            app:layout_constraintEnd_toEndOf="@+id/et_price"
             app:layout_constraintTop_toBottomOf="@+id/rg_price" />
 
         <TextView
@@ -247,7 +283,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/et_buy_price"
+            app:layout_constraintEnd_toEndOf="@+id/et_price"
             app:layout_constraintTop_toBottomOf="@+id/tv_delivery_method_text">
 
             <RadioButton
@@ -291,7 +327,7 @@
             android:gravity="right"
             android:text="우편(+520) / 반값택배(+1600)/ 준등기(+1800)\n운송비는 배송 방법에 달라지므로 판매자와 협의해주세요!"
             android:textColor="@color/dark_gray"
-            app:layout_constraintEnd_toEndOf="@+id/et_buy_price"
+            app:layout_constraintEnd_toEndOf="@+id/et_price"
             app:layout_constraintTop_toBottomOf="@+id/rd_delivery_method" />
 
         <TextView
@@ -312,7 +348,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="@+id/et_buy_price"
+            app:layout_constraintEnd_toEndOf="@+id/et_price"
             app:layout_constraintTop_toBottomOf="@+id/tv_registration_period_text">
 
             <RadioButton

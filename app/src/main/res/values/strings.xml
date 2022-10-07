@@ -117,4 +117,8 @@
     <!--    포카찾기 -->
     <string name="wish_card">찜한카드</string>
     <string name="price_unit_format">%,d 원</string>
+
+    <!--구매하기 or 판매하기-->
+    <string name="purchase_registration">구매 매칭 등록하기</string>
+    <string name="sales_registration">판매 매칭 등록하기</string>
 </resources>

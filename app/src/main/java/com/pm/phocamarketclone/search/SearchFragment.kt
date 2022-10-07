@@ -2,12 +2,13 @@ package com.pm.phocamarketclone.search
 
 import android.content.Intent
 import android.view.inputmethod.EditorInfo
+import com.example.data.model.PhotoCardInfoModel
 import com.pm.phocamarketclone.R
 import com.pm.phocamarketclone.base.BindingViewModelFragment
 import com.pm.phocamarketclone.databinding.FragmentSearchBinding
 import com.pm.phocamarketclone.detailpage.DetailPageActivity
-import com.pm.phocamarketclone.search.data.SearchData
 import com.pm.phocamarketclone.search.recyclerview.SearchListAdapter
+import timber.log.Timber
 
 class SearchFragment : BindingViewModelFragment<FragmentSearchBinding, SearchFragmentViewModel>(
     R.layout.fragment_search,
@@ -49,9 +50,9 @@ class SearchFragment : BindingViewModelFragment<FragmentSearchBinding, SearchFra
     }
 
     private inner class SearchListener : SearchListAdapter.SearchListener {
-        override fun onClickItem(item: SearchData) {
+        override fun onClickItem(item: PhotoCardInfoModel) {
             val intent = Intent(context, DetailPageActivity::class.java)
-            intent.putExtra("uniqueKey", item.uniqueKey)
+            intent.putExtra("uniqueKey", item.id)
             startActivity(intent)
             requireActivity().overridePendingTransition(0, 0)
         }
