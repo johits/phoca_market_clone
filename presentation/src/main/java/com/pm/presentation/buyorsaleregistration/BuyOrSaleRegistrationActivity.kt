@@ -3,9 +3,8 @@ package com.pm.presentation.buyorsaleregistration
 import android.view.View
 import androidx.core.widget.doOnTextChanged
 import coil.load
-import com.pm.data.source.ImageSourceImpl
-import com.pm.presentation.base.BaseViewModelActivity
 import com.pm.presentation.R
+import com.pm.presentation.base.BaseViewModelActivity
 import com.pm.presentation.databinding.ActivityBuyOrSaleRegistrationBinding
 
 class BuyOrSaleRegistrationActivity :
@@ -14,7 +13,6 @@ class BuyOrSaleRegistrationActivity :
         BuyOrSaleRegistrationActivityViewModel::class.java
     ), View.OnClickListener {
 
-    private val imageSourceImpl = ImageSourceImpl(this)
 
     override fun onInitBinding() {
         super.onInitBinding()
@@ -38,7 +36,7 @@ class BuyOrSaleRegistrationActivity :
             }
         }
         viewModel.photoCardInfo.observe(this) {
-                binding.ivPhoca.load(it.imageUrl)
+            binding.ivPhoca.load(it.imageUrl)
         }
     }
 

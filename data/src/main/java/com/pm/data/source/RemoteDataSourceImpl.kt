@@ -1,11 +1,7 @@
 package com.pm.data.source
 
-import android.content.Context
-import com.google.firebase.storage.FirebaseStorage
-import com.pm.data.R
 import com.pm.data.api.FirestoreDao
 import com.pm.data.model.PhotoCardInfoModel
-import dagger.hilt.android.qualifiers.ActivityContext
 import javax.inject.Inject
 
 class RemoteDataSourceImpl @Inject constructor(
@@ -15,24 +11,8 @@ class RemoteDataSourceImpl @Inject constructor(
             .get()
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-
                     val list = task.result.toObjects(PhotoCardInfoModel::class.java)
-                    val newList = ArrayList<PhotoCardInfoModel>()
-                    list.map {
-                        var url =""
-                            getImageUrl(it.imageUrl){ url = it}
-                        val item = PhotoCardInfoModel(
-                            id = it.id,
-                            cardName = it.cardName,
-                            imageUrl = url,
-                            group = it.group,
-                            member = it.member,
-                            recentPrice = it.recentPrice,
-                            heart = it.heart
-                        )
-                        newList.add(item)
-                    }
-                    callback.invoke(newList)
+                    callback.invoke(list)
                 }
             }
     }
@@ -73,16 +53,4 @@ class RemoteDataSourceImpl @Inject constructor(
                 }
             }
     }
-
-    fun getImageUrl(url: String, callback: (String) -> Unit) =
-        FirebaseStorage.getInstance().reference.child(
-            "/searchPhotoCard/%s"+url
-        ).downloadUrl
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    callback.invoke(task.result.toString())
-                }
-            }
-
-
 }

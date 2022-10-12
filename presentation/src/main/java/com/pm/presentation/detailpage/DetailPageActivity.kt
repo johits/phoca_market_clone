@@ -2,10 +2,9 @@ package com.pm.presentation.detailpage
 
 import android.content.Intent
 import coil.load
-import com.pm.data.source.ImageSourceImpl
+import com.pm.presentation.R
 import com.pm.presentation.base.BaseViewModelActivity
 import com.pm.presentation.buyorsaleregistration.BuyOrSaleRegistrationActivity
-import com.pm.presentation.R
 import com.pm.presentation.databinding.ActivityDetailPageBinding
 import com.pm.presentation.detailpage.recyclerview.DetailListAdapter
 import com.pm.presentation.detailpage.recyclerview.MatchingListAdapter
@@ -17,7 +16,6 @@ class DetailPageActivity :
     ) {
     private val detailListAdapter = DetailListAdapter()
     private val matchingListAdapter = MatchingListAdapter()
-    private val imageSourceImpl = ImageSourceImpl(this)
 
     override fun onInitBinding() {
         super.onInitBinding()
