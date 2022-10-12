@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="select_group">
+        <item>더보이즈</item>
+        <item>엔하이픈</item>
+        <item>우주소녀</item>
+        <item>투모로우바이투게더</item>
+    </string-array>
+
+    <string-array name="tbz">
+        <item>현재</item>
+        <item>주연</item>
+        <item>상연</item>
+        <item>큐</item>
+    </string-array>
+
+    <string-array name="txt">
+        <item>연준</item>
+        <item>수빈</item>
+        <item>범규</item>
+        <item>태현</item>
+    </string-array>
+</resources>

@@ -1,0 +1,124 @@
+<resources>
+    <string name="app_name">phoca_market_clone</string>
+
+    <!--BASE URL-->
+<!--    <string name="image_base_url">http://moon3482.asuscomm.com%s</string>-->
+    <string name="image_base_url">/searchPhotoCard/%s</string>
+
+    <!--    마이페이지 -->
+    <string name="mypage">마이페이지</string>
+    <string name="accost">안녕하세요! %s 님</string>
+    <string name="report_card">포카 제보</string>
+    <string name="collect">내 콜렉트북</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="buy_it">구매해요</string>
+    <string name="sell_it">판매해요</string>
+    <string name="total">전체</string>
+    <string name="matching">매칭중</string>
+    <string name="trading">거래중</string>
+    <string name="selling">판매중</string>
+    <string name="trade_complete">거래완료</string>
+    <string name="receive_sell">입고판매</string>
+    <string name="my_wallet">내 지갑</string>
+    <string name="purchase_details">구매내역</string>
+    <string name="apply_for_sales">입고판매 신청하기</string>
+    <string name="inform_tdn">운송장번호 알려주기</string>
+    <string name="guide">입고판매 가이드</string>
+    <string name="inspection_standard">포토카드 검수기준</string>
+    <string name="most_favorite_group_set">최애 그룹 설정</string>
+    <string name="withdrawal_chip">포카칩 출금</string>
+    <string name="notice">공지사항</string>
+    <string name="questions">자주 묻는 질문</string>
+    <string name="terms_and_conditions">서비스 이용약관</string>
+    <string name="personal_info_policy">개인정보 처리방침</string>
+    <string name="report_do_not_have_card">없는 포카 제보하기</string>
+    <string name="report_compensate_script">최초 제보자에게는 포카칩 500개를 드립니다. 😁\n(내가 제보한 포카 : %d개)</string>
+    <string name="reg_reject">등록불가</string>
+    <string name="reg_allow">등록가능</string>
+    <string name="explanation_reject_first">증명사진 및 정식명칭이\n포토카드가 아닌 굿즈</string>
+    <string name="explanation_reject_second">빛반사가 있는 사진</string>
+    <string name="explanation_reject_third">저화질의 사진</string>
+    <string name="report_step_first">Step 1. 포카 이미지 첨부하기</string>
+    <string name="report_step_second">Step 2. 정보 알려주기</string>
+    <string name="report_image_upload">이곳을 눌러 이미지를 등록 또는 변경하세요</string>
+    <string name="report_ask_group">어떤 그룹인가요? 🤔</string>
+    <string name="report_precautions_title">주의사항</string>
+    <string name="report_bullet">\u2022\u0020</string>
+    <string name="report_precautions_1">잘못된 정보는 등록이 거절될 수 있습니다.</string>
+    <string name="report_precautions_2">발매 예정인 포토카드들은 등록이 거절될 수 있습니다.</string>
+    <string name="report_precautions_3">타인의 사진으로 제보할 경우 등록이 거절될 수 있습니다.</string>
+    <string name="report_precautions_4">빛반사 또는 저화질의 이미지 등 식별이 불가능할 경우 등록이 거절될 수 있습니다.</string>
+    <string name="report_precautions_5">아티스트의 얼굴이 포함되지 않은 포토카드, 북마크, 스티커, 엽서, 증명사진 등은 해당되지 않습니다.</string>
+    <string name="report_precautions_6">투명 포토카드 제보시 뒷 배경에 흰색 바탕지를 대고 촬영해주세요.</string>
+    <string name="report_precautions_7">지속적인 허위 제보는 자제해 주세요. 등록 처리가 늦어지는 원인이 됩니다.</string>
+    <string name="report_precautions_8">한 번에 1개의 포토카드만 제보해주세요.</string>
+    <string name="report_precautions_9">최초 제보자에게만 포카칩을 보상으로 드리며, 현재 리스트에 없다고 해서 최초 제보자임을 보장하지는 않습니다.</string>
+    <string name="report_precautions_10">등록 처리 및 최초 제보자 확인에 대해서는 따로 피드백을 드리지 않습니다.</string>
+    <string name="report_precautions_11">현재 지원하지 않는 그룹의 포카 제보는 처리되지 않습니다.</string>
+    <string name="crap">👏</string>
+    <string name="not_found_matching_history">%s 내역이 없어요</string>
+    <string name="going_to_do_something">%s하러 가기</string>
+    <string name="have_cash">보유중인 캐쉬 : %d원</string>
+    <string name="account_info">계좌 정보</string>
+    <string name="reg_first_account_info">계좌 먼저 등록하기 (클릭)</string>
+    <string name="cash_manage_caution1">출금 요청시 요청 1건당 수수료 1,000원이 부과됩니다.</string>
+    <string name="cash_manage_caution2">실명 인증이 완료된 계좌로만 캐쉬 출금이 가능합니다. 만약 실명 인증을 진행하지 않았다면 먼저 인증을 진행해주세요.</string>
+    <string name="cash_manage_caution3">출금 요청 시점에 등록된 계좌로 출금됩니다. 출금 요청 직후 계좌를 변경하셔도 이전 출금 요청 건에는 반영되지 않으니 다시 한 번 확인해주세요.</string>
+    <string name="cash_manage_caution4">캐쉬는 출금 요청시 모두 출금 처리되며 나누어 출금할 수 없습니다.</string>
+    <string name="cash_manage_caution5">오류 발생 또는 부정하게 획득한 캐쉬에 대해서는 지급이 거절 될 수 있으며 지급이 되더라도 반환의 의무가 발생합니다.</string>
+    <string name="cash_manage_caution6">출금하실 계좌번호를 다시 확인해주시고 잘못 기재된 정보로 인해 발생한 손해에 대해서는 포카마켓은 책임을 지지 않습니다.</string>
+    <string name="cash_manage_caution7">캐쉬 출금을 요청 하시면 금융기관을 통해 자동 이체되며, 금융기관의 절차에 따라 최대 30분 정도 소요될 수 있습니다.</string>
+    <string name="please_first_account_info">계좌를 먼저 등록해주세요 🥰</string>
+    <!--   내 정보 관리 -->
+    <string name="my_profile_manage">내 정보 관리</string>
+    <string name="my_profile_info">프로필 정보</string>
+    <string name="my_contact_setting">연락처 설정</string>
+    <string name="logout">로그아웃</string>
+    <string name="membership_withdrawal">회원 탈퇴</string>
+    <!--   프로필 정보 -->
+    <string name="profile_email">이메일 주소</string>
+    <string name="profile_unique_nick">고유 닉네임</string>
+    <string name="profile_email_caution">이메일 주소는 변경하실 수 없습니다.</string>
+    <string name="profile_unique_nick_caution">고유 닉네임은 변경하실 수 없습니다.</string>
+    <!--   연락처 설정 -->
+    <string name="registered_phone_number">등록된 휴대폰 번호</string>
+    <string name="contact_use_notification">(알림용, 비공개)</string>
+    <string name="contact_setting_notice">휴대폰 번호로 카카오 알림톡을 보내드려요!\n* 휴대폰 번호는 매칭된 상대방에게 공개되지 않습니다.</string>
+    <string name="change">변경하기</string>
+    <!--   회원 탈퇴 -->
+    <string name="read_withdrawal_notice_title">회원 탈퇴에 앞서 유의사항 및 안내사항을 반드시 읽고 진행해주세요!</string>
+    <string name="withdrawal_precautions_title">유의사항</string>
+    <string name="withdrawal_precautions1">탈퇴 이후에는 해당 계정으로 다시 가입할 수 없습니다.</string>
+    <string name="withdrawal_precautions2">탈퇴 이후에는 과거의 매칭 기록을 확인할 수 없습니다.</string>
+    <string name="withdrawal_precautions3">단, 매칭 기록은 법적 분쟁 및 거래의 완결성 보존을 위해 포카마켓 서버에 보관됩니다.</string>
+    <string name="withdrawal_precautions4">유료로 구입하거나 무상으로 제공 받은 서비스내 재화에 대해서는 복구, 환불되지 않습니다.</string>
+    <string name="withdrawal_precautions5">개인정보처리방침 제3조(개인정보의 처리 및 보유 기간)에 따른 특별한 경우, 한시적으로 개인정보를 보존합니다.</string>
+    <string name="withdrawal_precautions6">휴대폰 인증이 된 계정을 회원 탈퇴할 경우, 동일한 휴대폰 번호로는 30일간 재인증 하실 수 없습니다. (재가입 불가)</string>
+    <string name="withdrawal_guidelines_title">안내사항</string>
+    <string name="withdrawal_guidelines1">현재 거래중인 포토카드가 있을 경우 탈퇴가 불가합니다.</string>
+    <string name="withdrawal_guidelines2">등록하신 모든 매칭중인 거래는 매칭취소처리 됩니다.</string>
+    <string name="withdrawal_guidelines3">현재 계정의 개인 온도 및 평가는 다른 계정으로 재가입 하더라도 이전되지 않습니다.</string>
+    <string name="consent_phrase_title">동의 문구 입력</string>
+    <string name="consent_phrase_script">회원 탈퇴를 진행하시겠습니다.</string>
+    <string name="consent_phrase_notice">\"회원 탈퇴를 진행하겠습니다.\"를 동일하게 입력해주세요</string>
+    <string name="withdrawal_button_text">회원 탈퇴하기 😭</string>
+
+    <!--   바텀 네비 메뉴 -->
+    <string name="phoca_find">포카찾기</string>
+    <string name="phoca_talk">포카톡</string>
+    <string name="my_page">마이페이지</string>
+
+    <!--    포카톡 -->
+    <string name="talk_group_member_format">%1$s %2$s</string>
+    <string name="none_talk_emoji">🥺</string>
+    <string name="none_talk_empty_string">텅 ~</string>
+    <string name="none_talk_recommend">첫 번째 포카 거래를 시작해보세요!</string>
+
+    <!--    포카찾기 -->
+    <string name="wish_card">찜한카드</string>
+    <string name="price_unit_format">%,d 원</string>
+
+    <!--구매하기 or 판매하기-->
+    <string name="purchase_registration">구매 매칭 등록하기</string>
+    <string name="sales_registration">판매 매칭 등록하기</string>
+</resources>
