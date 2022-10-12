@@ -1,0 +1,20 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
+    id 'dagger.hilt.android.plugin'
+}
+
+apply from: "$rootDir/config.gradle"
+
+android {
+    namespace 'com.pm.presentation'
+}
+
+dependencies {
+//    implementation project(':app')
+    implementation project(':base')
+    implementation project(':data')
+}
