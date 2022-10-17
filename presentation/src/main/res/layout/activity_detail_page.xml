@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.pm.presentation.detailpage.DetailState" />
+
+        <variable
+            name="vm"
+            type="com.pm.presentation.detailpage.DetailPageActivityViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="35dp"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/ic_back"
+            android:scaleX="0.3"
+            android:scaleY="0.3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="자세히"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btn_back" />
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/rd10_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_back" />
+
+        <ImageView
+            android:id="@+id/iv_phoca"
+            android:layout_width="80dp"
+            android:layout_height="110dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:background="@color/black"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="@+id/frameLayout"
+            app:layout_constraintTop_toTopOf="@+id/frameLayout" />
+
+        <TextView
+            android:id="@+id/tv_phoca_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"
+            android:maxLines="3"
+            android:text="@{vm.photoCardInfo.cardName}"
+            android:textSize="15dp"
+            app:layout_constraintStart_toEndOf="@+id/iv_phoca"
+            app:layout_constraintTop_toTopOf="@+id/iv_phoca" />
+
+        <TextView
+            android:id="@+id/tv_phoca_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{vm.photoCardInfo.member}"
+            android:textSize="15dp"
+            app:layout_constraintStart_toStartOf="@+id/tv_phoca_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_phoca_name" />
+
+        <TextView
+            android:id="@+id/tv_latest_price_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="최근 거래 가격:"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_phoca"
+            app:layout_constraintStart_toStartOf="@+id/tv_phoca_name" />
+
+        <TextView
+            android:id="@+id/tv_latest_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@{@string/price_unit_format(vm.photoCardInfo.recentPrice)}"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_latest_price_title"
+            app:layout_constraintStart_toEndOf="@+id/tv_latest_price_title"
+            app:layout_constraintTop_toTopOf="@+id/tv_latest_price_title" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/btn_sale"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="10dp">
+
+                <TextView
+                    android:id="@+id/tv_matching_waiting_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingTop="5dp"
+                    android:text="매칭 대기중인 포카"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioGroup
+                    android:id="@+id/rg_buy_or_sale"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rd10_gray"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_matching_waiting_text">
+
+                    <RadioButton
+                        android:id="@+id/rd_state_buy"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_gray_white"
+                        android:button="@null"
+                        android:checked="@{vm.isStateBuyOrSale == DetailState.BUY}"
+                        android:onClick="@{()->vm.setOnClickMatchWaitingState(DetailState.BUY)}"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="30dp"
+                        android:text="구매중"
+                        android:textAlignment="center"
+                        android:textColor="@color/black" />
+
+                    <RadioButton
+                        android:id="@+id/rd_state_sale"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/selector_gray_white"
+                        android:button="@null"
+                        android:checked="@{vm.isStateBuyOrSale == DetailState.SALE}"
+                        android:onClick="@{()->vm.setOnClickMatchWaitingState(DetailState.SALE)}"
+                        android:text="판매중"
+                        android:textAlignment="center"
+                        android:textColor="@color/black" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/tv_buy_or_sale_info_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/st_top_botttom"
+                    android:gravity="center_horizontal"
+                    android:text="     등록일                                            구매 희망 가격"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/rg_buy_or_sale" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_buy_or_sale_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/st_bottom"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_buy_or_sale_info_title"
+                    tools:listitem="@layout/rv_detail_page_item" />
+
+                <TextView
+                    android:id="@+id/tv_matching_history_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:text="매칭 히스토리"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/tv_matching_waiting_text"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_buy_or_sale_info" />
+
+                <TextView
+                    android:id="@+id/tv_matching_history_recent_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="(최근 5개)"
+                    android:textColor="@color/black"
+                    android:textSize="13dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_matching_history_text"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_matching_history_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/st_top_botttom"
+                    android:gravity="center_horizontal"
+                    android:text="   매칭일                                              매칭된 가격"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_matching_history_text" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_matching_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@drawable/st_bottom"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_matching_history_title"
+                    tools:listitem="@layout/rv_detail_page_item" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btn_buy"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/selector_press_pink"
+            android:text="살래요"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_sale"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btn_sale"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/selector_press_indigo"
+            android:text="팔래요"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_buy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_buy"
+            app:layout_constraintTop_toTopOf="@+id/btn_buy" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "301986330217",
+    "project_id": "phocamarketclone",
+    "storage_bucket": "phocamarketclone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:301986330217:android:eb824037e22d4df32414f8",
+        "android_client_info": {
+          "package_name": "com.pm.base"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "301986330217-p0mo0dbnv2atd5u65f5j7tq3pb10so6h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pm.base",
+            "certificate_hash": "045f0e7d9634adc2aa514e762960a4e074e99ead"
+          }
+        },
+        {
+          "client_id": "301986330217-5jmk35pqkmr9db4lu1id9gv19m8n2qte.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOH5Vr1Nae1p0XA9k3bb8qs7X7CPImfoI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "301986330217-5jmk35pqkmr9db4lu1id9gv19m8n2qte.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
