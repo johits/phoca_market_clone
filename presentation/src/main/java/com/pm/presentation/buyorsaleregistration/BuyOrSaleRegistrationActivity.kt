@@ -6,7 +6,9 @@ import coil.load
 import com.pm.presentation.R
 import com.pm.presentation.base.BaseViewModelActivity
 import com.pm.presentation.databinding.ActivityBuyOrSaleRegistrationBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class BuyOrSaleRegistrationActivity :
     BaseViewModelActivity<ActivityBuyOrSaleRegistrationBinding, BuyOrSaleRegistrationActivityViewModel>(
         R.layout.activity_buy_or_sale_registration,

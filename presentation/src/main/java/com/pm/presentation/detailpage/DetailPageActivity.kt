@@ -8,7 +8,9 @@ import com.pm.presentation.buyorsaleregistration.BuyOrSaleRegistrationActivity
 import com.pm.presentation.databinding.ActivityDetailPageBinding
 import com.pm.presentation.detailpage.recyclerview.DetailListAdapter
 import com.pm.presentation.detailpage.recyclerview.MatchingListAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailPageActivity :
     BaseViewModelActivity<ActivityDetailPageBinding, DetailPageActivityViewModel>(
         R.layout.activity_detail_page,
