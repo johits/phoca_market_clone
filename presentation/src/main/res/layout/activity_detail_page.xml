@@ -69,7 +69,6 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="15dp"
             android:maxLines="3"
-            android:text="@{vm.photoCardInfo.cardName}"
             android:textSize="15dp"
             app:layout_constraintStart_toEndOf="@+id/iv_phoca"
             app:layout_constraintTop_toTopOf="@+id/iv_phoca" />
@@ -78,7 +77,6 @@
             android:id="@+id/tv_phoca_member"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{vm.photoCardInfo.member}"
             android:textSize="15dp"
             app:layout_constraintStart_toStartOf="@+id/tv_phoca_name"
             app:layout_constraintTop_toBottomOf="@+id/tv_phoca_name" />
