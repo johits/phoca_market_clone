@@ -4,23 +4,26 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.pm.data.model.PhotoCardInfoModel
-import com.pm.data.source.RemoteDataSourceImpl
+import com.pm.data.source.RemoteDataSource
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
 
-class SearchFragmentViewModel() : ViewModel() {
+@HiltViewModel
+class SearchFragmentViewModel @Inject constructor(private val remoteDataSource: RemoteDataSource) :
+    ViewModel() {
     private val _searchList = MutableLiveData<List<PhotoCardInfoModel>>()
     val searchList: LiveData<List<PhotoCardInfoModel>> = _searchList
     val isWish = MutableLiveData(false)
-    private val remoteDataSourceImpl = RemoteDataSourceImpl()
 
     init {
-        remoteDataSourceImpl.getPhotoCardInfoData {
+        remoteDataSource.getPhotoCardInfoData {
             _searchList.value = it
         }
     }
 
     fun search(keyword: String) {
-        remoteDataSourceImpl.searchPhotoCardInfoData(keyword) {
+        remoteDataSource.searchPhotoCardInfoData(keyword) {
             _searchList.value = it
         }
     }

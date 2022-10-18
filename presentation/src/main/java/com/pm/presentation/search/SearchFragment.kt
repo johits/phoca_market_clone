@@ -3,13 +3,14 @@ package com.pm.presentation.search
 import android.content.Intent
 import android.view.inputmethod.EditorInfo
 import com.pm.data.model.PhotoCardInfoModel
-import com.pm.presentation.base.BindingViewModelFragment
-import com.pm.presentation.detailpage.DetailPageActivity
 import com.pm.presentation.R
+import com.pm.presentation.base.BindingViewModelFragment
 import com.pm.presentation.databinding.FragmentSearchBinding
+import com.pm.presentation.detailpage.DetailPageActivity
 import com.pm.presentation.search.recyclerview.SearchListAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class SearchFragment : BindingViewModelFragment<FragmentSearchBinding, SearchFragmentViewModel>(
     R.layout.fragment_search,
     SearchFragmentViewModel::class.java

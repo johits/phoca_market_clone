@@ -5,15 +5,23 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.pm.data.model.PhotoCardInfoModel
+import com.pm.data.source.RemoteDataSource
 import com.pm.data.source.RemoteDataSourceImpl
 import com.pm.presentation.detailpage.data.DetailData
 import com.pm.presentation.detailpage.data.MatchingHistoryData
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
 enum class DetailState(value: String) {
     BUY("buy"), SALE("sale")
 }
 
-class DetailPageActivityViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel() {
+@HiltViewModel
+class DetailPageActivityViewModel @Inject constructor(
+    private val savedStateHandle: SavedStateHandle,
+    private val remoteDataSource: RemoteDataSource
+) :
+    ViewModel() {
 
     var uniqueKey: String = savedStateHandle.get<String>("uniqueKey") ?: ""
 
@@ -25,7 +33,6 @@ class DetailPageActivityViewModel(private val savedStateHandle: SavedStateHandle
 
     private val _matchingList = MutableLiveData<List<MatchingHistoryData>>()
     val matchingList: LiveData<List<MatchingHistoryData>> = _matchingList
-    private val remoteDataSourceImpl = RemoteDataSourceImpl()
 
     init {
         getPhotoCardInfo()
@@ -36,7 +43,7 @@ class DetailPageActivityViewModel(private val savedStateHandle: SavedStateHandle
 
 
     private fun getPhotoCardInfo() {
-        remoteDataSourceImpl.getPhotoCardItemInfoData(uniqueKey) {
+        remoteDataSource.getPhotoCardItemInfoData(uniqueKey) {
             photoCardInfo.value = it
         }
     }
