@@ -4,14 +4,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.pm.data.model.PhotoCardInfoModel
-import com.pm.data.source.RemoteDataSource
+import com.pm.data.repository.RemoteDataRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 class BuyOrSaleRegistrationActivityViewModel @Inject constructor(
     private val savedStateHandle: SavedStateHandle,
-    private val remoteDataSource: RemoteDataSource
+    private val remoteDataRepository: RemoteDataRepository
 ) : ViewModel() {
 
     var uniqueKey: String = savedStateHandle.get<String>("uniqueKey") ?: ""
@@ -32,7 +32,7 @@ class BuyOrSaleRegistrationActivityViewModel @Inject constructor(
     }
 
     private fun getPhotoCardInfo() {
-        remoteDataSource.getPhotoCardItemInfoData(uniqueKey) {
+        remoteDataRepository.getPhotoCardItemInfoData(uniqueKey) {
             photoCardInfo.value = it
         }
     }

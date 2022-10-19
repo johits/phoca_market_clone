@@ -5,8 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.pm.data.model.PhotoCardInfoModel
-import com.pm.data.source.RemoteDataSource
-import com.pm.data.source.RemoteDataSourceImpl
+import com.pm.data.repository.RemoteDataRepository
 import com.pm.presentation.detailpage.data.DetailData
 import com.pm.presentation.detailpage.data.MatchingHistoryData
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,7 +18,7 @@ enum class DetailState(value: String) {
 @HiltViewModel
 class DetailPageActivityViewModel @Inject constructor(
     private val savedStateHandle: SavedStateHandle,
-    private val remoteDataSource: RemoteDataSource
+    private val remoteDataRepository: RemoteDataRepository
 ) :
     ViewModel() {
 
@@ -43,7 +42,7 @@ class DetailPageActivityViewModel @Inject constructor(
 
 
     private fun getPhotoCardInfo() {
-        remoteDataSource.getPhotoCardItemInfoData(uniqueKey) {
+        remoteDataRepository.getPhotoCardItemInfoData(uniqueKey) {
             photoCardInfo.value = it
         }
     }
