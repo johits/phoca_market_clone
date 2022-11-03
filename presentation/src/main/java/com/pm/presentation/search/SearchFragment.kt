@@ -59,5 +59,9 @@ class SearchFragment : BindingViewModelFragment<FragmentSearchBinding, SearchFra
             requireActivity().overridePendingTransition(0, 0)
         }
 
+        override fun onClickHeart(item: PhotoCardInfoModel, isChecked: Boolean) {
+            viewModel.addHeartList(item.id , isChecked)
+        }
+
     }
 }

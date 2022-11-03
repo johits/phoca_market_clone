@@ -16,11 +16,13 @@ class SearchListAdapter(private val listener: SearchListener) :
         holder.apply {
             binding.apply {
                 root.setOnClickListener { listener.onClickItem(getItem(bindingAdapterPosition)) }
+                cbHeart.setOnClickListener { listener.onClickHeart(getItem(bindingAdapterPosition),cbHeart.isChecked) }
             }
         }
     }
 
     interface SearchListener {
         fun onClickItem(item: PhotoCardInfoModel)
+        fun onClickHeart(item: PhotoCardInfoModel, isChecked:Boolean)
     }
 }
