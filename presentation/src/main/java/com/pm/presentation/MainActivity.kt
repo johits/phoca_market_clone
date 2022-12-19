@@ -1,5 +1,6 @@
 package com.pm.presentation
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -7,11 +8,12 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.firebase.firestore.FirebaseFirestore
+import com.pm.presentation.databinding.ActivityMainBinding
 import com.pm.presentation.mypage.MyPageFragment
 import com.pm.presentation.phocatalk.PhocaTalkFragment
-import com.pm.presentation.databinding.ActivityMainBinding
 import com.pm.presentation.search.SearchFragment
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -25,9 +27,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         viewInit()
-//        for (i in 1..3){
-//            add(i)
-//        }
+        val fcm = Intent(applicationContext, MyFirebaseMessaging::class.java)
+        startService(fcm)
     }
 
     private fun viewInit() {

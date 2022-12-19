@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pm.presentation">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <application>
         <activity
             android:name="com.pm.presentation.MainActivity"
@@ -13,5 +14,13 @@
         </activity>
         <activity android:name="com.pm.presentation.detailpage.DetailPageActivity" />
         <activity android:name="com.pm.presentation.buyorsaleregistration.BuyOrSaleRegistrationActivity" />
+
+        <service
+            android:name="com.pm.presentation.MyFirebaseMessaging"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 </manifest>
