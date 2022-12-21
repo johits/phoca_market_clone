@@ -3,6 +3,11 @@
     package="com.pm.presentation">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+<!--    다른 앱 위에 그리기 위한 권한-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
     <application>
         <activity
             android:name="com.pm.presentation.MainActivity"
@@ -17,7 +22,8 @@
 
         <service
             android:name="com.pm.presentation.MyFirebaseMessaging"
-            android:exported="true">
+            android:exported="false"
+            android:permission="android.permission.SYSTEM_ALERT_WINDOW">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
